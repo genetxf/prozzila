@@ -52,16 +52,49 @@ include 'header.php';
                             <p class="color-1 mb-0 pt-4">5 Unread notification</p>
                         </div>
                     </div>
-                    <a class="icon-box bg-color-4" href="new-project.php">
-                        <div class="create d-flex">
-                            <div class="icon bg-white">
-                                <i class="bx bx-plus"></i>
-                            </div>
-                            <div class="content d-flex align-items-center">
-                                <h5 class="color-white">Create New Project</h5>
-                            </div>
+                    <div class="icon-box bg-color-2">
+                        <div class="icon bg-icon-2">
+                            <i class="bx bxs-message-rounded"></i>
                         </div>
-                    </a>
+                        <div class="content click-c">
+                            <h5 class="title-box">Message</h5>
+                            <p class="color-2 mb-0 pt-4">5 Unread notification</p>
+                        </div>
+                        <div class="notification-list card">
+                            <div class="top box-header">
+                                <h5>Notification</h5>
+
+                            </div>
+                            <div class="pd-1r">
+                                <div class="divider"></div>
+                            </div>
+
+                            <div class="box-body">
+                                <ul class="list">
+                                    <li class="d-flex no-seen">
+                                        <div class="img-mess"><img class="mr-14" src="./images/avatar/avt-1.png" alt="avt"></div>
+                                        <div class="info">
+                                            <a href="#" class="font-w600 mb-0 color-primary">Elizabeth Holland</a>
+                                            <p class="pb-0 mb-0 line-h14 mt-6">Proin ac quam et lectus vestibulum</p>
+                                        </div>
+                                    </li>
+
+                                    <li class="d-flex">
+                                        <div class="img-mess"><img class="mr-14" src="./images/avatar/avt-1.png" alt="avt"></div>
+                                        <div class="info">
+                                            <a href="#" class="font-w600 mb-0 color-primary">Elizabeth Holland</a>
+                                            <p class="pb-0 mb-0 line-h14 mt-6">Proin ac quam et lectus vestibulum</p>
+                                        </div>
+                                    </li>
+
+                                </ul>
+                                <div class="btn-view">
+                                    <a class="font-w600 h5" href="message.html">View All</a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
             </div>
 
