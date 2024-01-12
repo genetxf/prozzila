@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>DATABASE</ID>
+  <OriginalElement>7ce9ab93-5cff-4e8d-bd88-3f8b271d2375.SCHEMA:prozzila</OriginalElement>
+  <nodes>
+    <node x="569.9009446472811" y="235.9205180586978">7ce9ab93-5cff-4e8d-bd88-3f8b271d2375.TABLE:prozzila.profiles</node>
+    <node x="925.9652508048889" y="167.6953581488304">7ce9ab93-5cff-4e8d-bd88-3f8b271d2375.TABLE:prozzila.messages</node>
+    <node x="1140.7172174068137" y="-283.74857107481">7ce9ab93-5cff-4e8d-bd88-3f8b271d2375.TABLE:prozzila.permissions</node>
+    <node x="-241.007123424209" y="-177.13534802141226">7ce9ab93-5cff-4e8d-bd88-3f8b271d2375.TABLE:prozzila.tasks</node>
+    <node x="925.9311325297732" y="649.762288206206">7ce9ab93-5cff-4e8d-bd88-3f8b271d2375.TABLE:prozzila.client</node>
+    <node x="1179.4296677926259" y="284.47929673746603">7ce9ab93-5cff-4e8d-bd88-3f8b271d2375.TABLE:prozzila.admins</node>
+    <node x="312.53749033921554" y="484.13723641079287">7ce9ab93-5cff-4e8d-bd88-3f8b271d2375.TABLE:prozzila.comments</node>
+    <node x="572.2764278988323" y="-32.248006034189416">7ce9ab93-5cff-4e8d-bd88-3f8b271d2375.TABLE:prozzila.departments</node>
+    <node x="727.7335710460844" y="1180.3351076013803">7ce9ab93-5cff-4e8d-bd88-3f8b271d2375.TABLE:prozzila.invoices</node>
+    <node x="78.25263705088747" y="442.22130213778496">7ce9ab93-5cff-4e8d-bd88-3f8b271d2375.TABLE:prozzila.assignment</node>
+    <node x="860.2797606289862" y="-252.8325241793383">7ce9ab93-5cff-4e8d-bd88-3f8b271d2375.TABLE:prozzila.employees</node>
+    <node x="303.19779236416656" y="197.84194395531858">7ce9ab93-5cff-4e8d-bd88-3f8b271d2375.TABLE:prozzila.payments</node>
+    <node x="615.7489648992714" y="864.2064012761524">7ce9ab93-5cff-4e8d-bd88-3f8b271d2375.TABLE:prozzila.upload</node>
+    <node x="357.82906874481137" y="904.9200552837723">7ce9ab93-5cff-4e8d-bd88-3f8b271d2375.TABLE:prozzila.projects</node>
+    <node x="1195.383436567262" y="-62.89367936621744">7ce9ab93-5cff-4e8d-bd88-3f8b271d2375.TABLE:prozzila.tickets</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="7ce9ab93-5cff-4e8d-bd88-3f8b271d2375.TABLE:prozzila.projects" target="7ce9ab93-5cff-4e8d-bd88-3f8b271d2375.TABLE:prozzila.projects" relationship="REFERENCES">
+      <point x="0.0" y="212.0" />
+      <point x="455.82906874481137" y="1405.8351076013803" />
+      <point x="577.4009446472811" y="1405.8351076013803" />
+      <point x="577.4009446472811" y="1112.7064012761525" />
+      <point x="98.0" y="-4.21365400761988" />
+    </edge>
+    <edge source="7ce9ab93-5cff-4e8d-bd88-3f8b271d2375.TABLE:prozzila.messages" target="7ce9ab93-5cff-4e8d-bd88-3f8b271d2375.TABLE:prozzila.employees" relationship="REFERENCES">
+      <point x="-66.68549017590266" y="-80.0" />
+      <point x="0.0" y="80.0" />
+    </edge>
+    <edge source="7ce9ab93-5cff-4e8d-bd88-3f8b271d2375.TABLE:prozzila.projects" target="7ce9ab93-5cff-4e8d-bd88-3f8b271d2375.TABLE:prozzila.employees" relationship="REFERENCES">
+      <point x="70.86893125518864" y="-212.00005528377233" />
+      <point x="526.698" y="-49.74799999999999" />
+      <point x="832.0" y="-49.74799999999999" />
+      <point x="832.0" y="-172.83299999999997" />
+      <point x="-95.49976062898628" y="-4.7582066167706216E-4" />
+    </edge>
+    <edge source="7ce9ab93-5cff-4e8d-bd88-3f8b271d2375.TABLE:prozzila.assignment" target="7ce9ab93-5cff-4e8d-bd88-3f8b271d2375.TABLE:prozzila.employees" relationship="REFERENCES">
+      <point x="82.50036294911251" y="-31.58430213778493" />
+      <point x="549.0" y="466.637" />
+      <point x="549.0" y="-187.83299999999997" />
+      <point x="-95.49976062898628" y="-15.000475820661677" />
+    </edge>
+    <edge source="7ce9ab93-5cff-4e8d-bd88-3f8b271d2375.TABLE:prozzila.invoices" target="7ce9ab93-5cff-4e8d-bd88-3f8b271d2375.TABLE:prozzila.invoices" relationship="REFERENCES">
+      <point x="0.0" y="104.0" />
+      <point x="817.2335710460844" y="1420.8351076013803" />
+      <point x="1201.9296677926259" y="1420.8351076013803" />
+      <point x="1201.9296677926259" y="1284.3351076013803" />
+      <point x="89.5" y="0.0" />
+    </edge>
+    <edge source="7ce9ab93-5cff-4e8d-bd88-3f8b271d2375.TABLE:prozzila.departments" target="7ce9ab93-5cff-4e8d-bd88-3f8b271d2375.TABLE:prozzila.employees" relationship="REFERENCES">
+      <point x="115.49957210116779" y="6.03418942546341E-6" />
+      <point x="832.0" y="71.75200000000001" />
+      <point x="832.0" y="-172.83299999999997" />
+      <point x="-95.49976062898628" y="-4.7582066167706216E-4" />
+    </edge>
+    <edge source="7ce9ab93-5cff-4e8d-bd88-3f8b271d2375.TABLE:prozzila.assignment" target="7ce9ab93-5cff-4e8d-bd88-3f8b271d2375.TABLE:prozzila.tasks" relationship="REFERENCES">
+      <point x="0.0" y="-56.0" />
+      <point x="159.75976047509647" y="212.0" />
+    </edge>
+    <edge source="7ce9ab93-5cff-4e8d-bd88-3f8b271d2375.TABLE:prozzila.payments" target="7ce9ab93-5cff-4e8d-bd88-3f8b271d2375.TABLE:prozzila.payments" relationship="REFERENCES">
+      <point x="0.0" y="-92.0" />
+      <point x="406.19779236416656" y="172.75199396581058" />
+      <point x="512.1977923641666" y="172.75199396581058" />
+      <point x="512.1977923641666" y="289.8419439553186" />
+      <point x="103.0" y="0.0" />
+    </edge>
+    <edge source="7ce9ab93-5cff-4e8d-bd88-3f8b271d2375.TABLE:prozzila.profiles" target="7ce9ab93-5cff-4e8d-bd88-3f8b271d2375.TABLE:prozzila.departments" relationship="REFERENCES">
+      <point x="-147.9999446472811" y="220.5794819413022" />
+      <point x="549.0" y="740.5" />
+      <point x="549.0" y="821.421" />
+      <point x="883.4010000000001" y="821.421" />
+      <point x="883.4010000000001" y="56.75200000000001" />
+      <point x="115.49957210116779" y="-14.999993965810575" />
+    </edge>
+    <edge source="7ce9ab93-5cff-4e8d-bd88-3f8b271d2375.TABLE:prozzila.projects" target="7ce9ab93-5cff-4e8d-bd88-3f8b271d2375.TABLE:prozzila.departments" relationship="REFERENCES">
+      <point x="-6.874481135099586E-5" y="-212.00005528377233" />
+      <point x="455.829" y="740.5" />
+      <point x="549.0" y="740.5" />
+      <point x="549.0" y="821.421" />
+      <point x="883.4010000000001" y="821.421" />
+      <point x="883.4010000000001" y="56.75200000000001" />
+      <point x="115.49957210116779" y="-14.999993965810575" />
+    </edge>
+    <edge source="7ce9ab93-5cff-4e8d-bd88-3f8b271d2375.TABLE:prozzila.profiles" target="7ce9ab93-5cff-4e8d-bd88-3f8b271d2375.TABLE:prozzila.employees" relationship="REFERENCES">
+      <point x="5.535271890266813E-5" y="-283.99951805869784" />
+      <point x="717.9010000000001" y="205.342" />
+      <point x="832.0" y="205.342" />
+      <point x="832.0" y="-172.83299999999997" />
+      <point x="-95.49976062898628" y="-4.7582066167706216E-4" />
+    </edge>
+    <edge source="7ce9ab93-5cff-4e8d-bd88-3f8b271d2375.TABLE:prozzila.comments" target="7ce9ab93-5cff-4e8d-bd88-3f8b271d2375.TABLE:prozzila.employees" relationship="REFERENCES">
+      <point x="97.4995096607845" y="-2.3641079289404843E-4" />
+      <point x="549.0" y="576.137" />
+      <point x="549.0" y="-187.83299999999997" />
+      <point x="-95.49976062898628" y="-15.000475820661677" />
+    </edge>
+    <edge source="7ce9ab93-5cff-4e8d-bd88-3f8b271d2375.TABLE:prozzila.client" target="7ce9ab93-5cff-4e8d-bd88-3f8b271d2375.TABLE:prozzila.client" relationship="REFERENCES">
+      <point x="0.0" y="152.0" />
+      <point x="1019.4311325297732" y="1187.8351076013803" />
+      <point x="1186.9296677926259" y="1187.8351076013803" />
+      <point x="1186.9296677926259" y="801.762288206206" />
+      <point x="93.5" y="0.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Compact" zoom="0.6563334352640993" showDependencies="false" x="575.0" y="568.5" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Columns</Category>
+    <Category>Comments</Category>
+    <Category>Key columns</Category>
+    <Category>Virtual foreign keys</Category>
+  </Categories>
+</Diagram>
+
