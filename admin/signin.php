@@ -25,7 +25,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
         session_start();
-
         $_SESSION['user'] = $user;
         $_SESSION['email'] = $row["email"];
             $email = $_SESSION['email'];
@@ -34,6 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if ($result2->num_rows > 0) {
                 while ($row2 = $result2->fetch_assoc()) {
                     $_SESSION['picture'] = $row2["picture"];
+                    $_SESSION['id'] = $row2["id"];
                 }
             }
         // User authentication successful
@@ -41,9 +41,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
     } else {
         // User authentication failed
+        $error="Invalid username or password!";
+        include 'alert.php';
         ?>
-        <script>alert('Invalid username or password!');
-            history.go(-1);</script>
         <?php
     }
 
