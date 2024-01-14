@@ -194,7 +194,7 @@ include 'header.php';
                                 if ($result->num_rows > 0) {
                                     echo '<div class="kanban-wrap ui-sortable">';
                                     while ($row = $result->fetch_assoc()) {
-                                        $taskid=$row['id'];
+                                        $cardid=$row['id'];
                                         ?>
                                         <div class="panel">
                                             <div class="kanban-box item-box ui-sortable-handle">
@@ -595,7 +595,7 @@ include 'header.php';
                                     <div class="form-group">
                                         <label>Card ID</label>
                                         <select class="select">
-                                            <option><?= $taskid ?></option>
+                                            <option><?= $cardid ?></option>
                                         </select>
                                     </div>
                                 </div>
