@@ -14,18 +14,21 @@ if (isset($_POST['signup'])) {
 
     if ($result->num_rows > 0) {
         // If the user exists
-        echo "<div class='alert alert-danger'>Username or Email exists!! Please use diffrent name or email: " . $conn->error . "</div>";
+        $error="User exist!!! Try another name.";
+        include 'alert.php';
     } else {
         // If the user doesn't exist, insert new
         $insertQuery = "INSERT INTO `admins` (`username`, `email`, `password`) VALUES('$uname','$email','$upass')";
         if (mysql_query("INSERT INTO `admins` (`username`, `email`, `password`) VALUES('$uname','$email','$upass')")) {
-            echo "<div class='alert alert-success'>Registration for Username '$uname' updated successfully!</div>";
+            $success ="Registration for Username '$uname' updated successfully!";
+            include 'success.php';
         } else {
-            echo "<div class='alert alert-danger'>Registration for Username '$uname' have faild! Please try again.</div>";
+            include 'alert.php';
         }
     }
 
 }
+
 ?>
     <!-- MAIN CONTENT -->
     <div style="bottom: 75px">
