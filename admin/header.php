@@ -2,6 +2,7 @@
 $loguser = $_SESSION['user'];
 $logemail = $_SESSION['email'];
 $logpicture  = $_SESSION['picture'];
+$logid = $_SESSION['id'];
 ?>
 <body class="sidebar-expand light active">
 
