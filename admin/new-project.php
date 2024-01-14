@@ -18,7 +18,7 @@ include 'header.php';
                             <div class="row">
                                 <div class="col-md-6 col-sm-12 mb-24">
                                     <div class="form-group"><label class="form-label">Project ID</label> <input required
-                                                                                                                type="number"
+                                                                                                                type="text"
                                                                                                                 name="project_id"
                                                                                                                 class="form-control"
                                                                                                                 placeholder="2569852">
@@ -27,7 +27,7 @@ include 'header.php';
                                 <div class="col-md-6 col-sm-12 mb-24">
                                     <div class="form-group"><label class="form-label">Project Title</label> <input
                                                 required type="text" name="project_title" class="form-control"
-                                                placeholder="Software Development"></div>
+                                                placeholder="Example: Software Development"></div>
                                 </div>
                             </div>
                             <div class="row">
