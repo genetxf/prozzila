@@ -186,13 +186,13 @@ include 'header.php';
                                     </div>
                                 </div>
                                 <?php
-                                $sql = "SELECT * FROM cards";
+                                $sql = "SELECT * FROM tasks";
                                 $result = $conn->query($sql);
 
                                 if ($result->num_rows > 0) {
                                     while ($row = $result->fetch_assoc()) {
                                         // Explode the tasks into an array
-                                        $tasks = explode(",", $row['tasks']);
+                                        $tasks = $row['task_name'];
 
                                         echo '<div class="kanban-wrap">
             <div class="panel">
@@ -223,19 +223,19 @@ include 'header.php';
                         </div>
                         <form method="post" action="update_tasks.php">
                             <div class="tasks">';
-                                        foreach ($tasks as $task) {
+                                        foreach ($tasks as $tasks) {
                                             // Check if the task is completed
-                                            $checked = in_array($task, explode(",", $row['completed_tasks'])) ? 'checked' : '';
+                                            $checked = in_array($tasks, $row['tasks']) ? 'checked' : '';
 
                                             echo '<div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="completed_tasks[]" value="' . $task . '" ' . $checked . '>
-                    <label class="form-check-label" for="' . $task . '">' . $task . '</label>
-                </div>';
+                                                    <input class="form-check-input" type="checkbox" name="completed_tasks[]" value="' . $tasks . '" ' . $checked . '>
+                                                    <label class="form-check-label" for="' . $tasks . '">' . $task . '</label>
+                                                    </div>';
                                         }
                                         echo '</div>
-                            <input type="hidden" name="card_id" value="' . $row['id'] . '">
-                            <button type="submit" class="btn btn-primary">Save</button>
-                        </form>';
+                                                <input type="hidden" name="card_id" value="' . $row['id'] . '">
+                                                <button type="submit" class="btn btn-primary">Save</button>
+                                            </form>';
 
                                         // Display description and file upload if any task is completed
                                         if (!empty($row['completed_tasks'])) {
