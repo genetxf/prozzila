@@ -494,7 +494,9 @@ include 'header.php';
     <!-- END MAIN CONTENT -->
 
     <div class="overlay"></div>
-
+<?php
+include 'copyright.php';
+?>
     <!-- SCRIPT -->
 
     <!-- Plugin -->

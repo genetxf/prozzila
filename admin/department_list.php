@@ -2,7 +2,7 @@
 include 'auth.php';
 include 'database.php';
 // Query to fetch project details
-$sql = "SELECT * FROM `projects`";
+$sql = "SELECT * FROM `departments`";
 $result = $conn->query($sql);
 
 ?>
@@ -38,7 +38,7 @@ $result = $conn->query($sql);
     <link rel="stylesheet" href="./css/responsive.css">
 </head>
 <?php
-$pagetitle = "Projects";
+$pagetitle = "Departments";
 include 'header.php';
 ?>
 
@@ -50,14 +50,13 @@ include 'header.php';
                 <div class="box project">
                     <div class="box-header">
                         <h4 class="box-title">Complete list:</h4>
-                        <a class="btn btn-primary" href="new-project.php"><i class="fas fa-plus mr-5"></i>Add
+                        <a class="btn btn-primary" href="#" data-toggle="modal" data-target="#add_card_modal"><i class="fas fa-plus mr-5"></i>Add
                         </a>
                     </div>
                 </div>
             </div>
             <div class="col-9 col-xl-12">
                 <div class="box">
-
                     <!-- Table -->
                     <div class="box-body">
                         <div class="table-responsive">
@@ -74,26 +73,15 @@ include 'header.php';
                                                 </th>
                                                 <th class="border-bottom-0 sorting fs-14 font-w500" tabindex="0"
                                                     aria-controls="task-profile" rowspan="1" colspan="1"
-                                                    style="width: 222.312px;">Task
+                                                    style="width: 222.312px;">Name
                                                 </th>
                                                 <th class="border-bottom-0 sorting fs-14 font-w500" tabindex="0"
                                                     aria-controls="task-profile" rowspan="1" colspan="1"
-                                                    style="width: 84.8281px;">Priority
+                                                    style="width: 84.8281px;">Location
                                                 </th>
                                                 <th class="border-bottom-0 sorting fs-14 font-w500" tabindex="0"
                                                     aria-controls="task-profile" rowspan="1" colspan="1"
-                                                    style="width: 87.9844px;">Start Date
-                                                </th>
-                                                <th class="border-bottom-0 sorting fs-14 font-w500" tabindex="0"
-                                                    aria-controls="task-profile" rowspan="1" colspan="1"
-                                                    style="width: 87.9844px;">Deadline
-                                                </th>
-                                                <th class="border-bottom-0 sorting fs-14 font-w500" tabindex="0"
-                                                    aria-controls="task-profile" rowspan="1" colspan="1"
-                                                    style="width: 110.719px;">Work Status
-                                                </th>
-                                                <th class="border-bottom-0 sorting_disabled fs-14 font-w500" rowspan="1"
-                                                    colspan="1" style="width: 145.391px;">Actions
+                                                    style="width: 84.8281px;">Action
                                                 </th>
                                             </tr>
                                             </thead>
@@ -106,33 +94,14 @@ include 'header.php';
 
                                             ?>
                                             <tr class="odd">
-                                                <td class="text-center"><?php echo $row["project_id"] ?></td>
+                                                <td class="text-center"><?php echo $row["department_id"] ?></td>
                                                 <td>
-                                                    <a href="project-details.php?data=<?php echo urlencode($row["id"]); ?>" class="d-flex "> <span><?php echo $row["project_title"] ?></span> </a>
+                                                    <a class="d-flex "> <span><?php echo $row["department_name"] ?></span> </a>
                                                 </td>
-                                                <td><?php
-                                                    if ($row["priority"] == "High") {
-                                                        $badge = "badge-danger-light";
-                                                    } elseif ($row["priority"] == "Medium") {
-                                                        $badge = "badge-warning-light";
-                                                    } else
-                                                        $badge = "badge-success-light";
 
-                                                    ?>
-                                                    <span class="badge <?php echo $badge ?>"><?php echo $row["priority"] ?></span>
+                                                <td><?php echo $row["location"] ?></td>
                                                 </td>
-                                                <td><?php echo $row["start_date"] ?></td>
-                                                <td><?php echo $row["end_date"] ?></td>
-                                                <td><?php
-                                                    if ($row["work_status"] == "Pending") {
-                                                        $workbadge = "badge-danger";
-                                                    } elseif ($row["work_status"] == "On Progress") {
-                                                        $workbadge = "badge-warning";
-                                                    } else
-                                                        $workbadge = "badge-success";
-
-                                                    ?><span class="badge <?php echo $workbadge ?>"><?php echo $row["work_status"] ?></span></td>
-                                                <td><a href="deleteproject.php?data=<?php echo urlencode($row["project_id"]); ?>" class="btn btn-danger submit-btn">Delete</a></td>
+                                                <td><a href="deletedpt.php?data=<?php echo urlencode($row["department_id"]); ?>" class="btn btn-danger submit-btn">Delete</a></td>
                                             </tr>
                                             <?php
                                             }
@@ -158,39 +127,91 @@ include 'header.php';
     </div>
 </div>
 <!-- END MAIN CONTENT -->
-<?php
-include 'copyright.php';
-?>
+
 <div class="overlay"></div>
 
+<div id="add_card_modal" class="modal custom-modal fade" role="dialog">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Add Department</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="adddpt.php" method="post">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label>Manager Name</label>
+                                    <input placeholder="Type to search" type="text" class="form-control typeahead" id="username" name="username" autocomplete="off">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label>Dept. Code</label>
+                                    <input class="form-control" name="deptCode" value="" type="text">
+                                </div>
+                            </div>
+                        </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label>Department Name</label>
+                                <input class="form-control" name="deptName" value="" type="text">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label>Location</label>
+                                <input class="form-control" name="location" value="" type="text">
+                            </div>
+                        </div></div>
+                        <div class="form-group">
+                            <label>Description</label>
+                            <textarea rows="4" class="form-control" name="description" placeholder="Enter your message here"></textarea>
+                        </div>
+                        <div class="submit-section">
+                            <button class="btn btn-primary submit-btn">Save</button>
+                        </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    <?php include 'footer.php';
+    include 'database.php';
+
+    // Fetch usernames
+    $sql22 = "SELECT username FROM employees";
+    $result22 = $conn->query($sql22);
+    $usernames = array();
+    if ($result22->num_rows > 0) {
+        while ($row = $result22->fetch_assoc()) {
+            $usernames[] = $row['username'];
+        }
+    }
+
+    // Close the database connection after fetching data
+
+    ?>
+
+
+
+        <!-- Bootstrap Typeahead JS -->
+<script src="js/typeahead.js"></script>
+<script>
+    $(document).ready(function(){
+        var usernames = <?php echo json_encode($usernames); ?>;
+        $('.typeahead[name="username"]').typeahead({
+            source: usernames
+        });
+    });
+</script>
+
 <!-- SCRIPT -->
-<!-- APEX CHART -->
 
-<script src="./libs/jquery/jquery.min.js"></script>
-<script src="./libs/jquery/jquery-ui.min.js"></script>
-<script src="./libs/moment/min/moment.min.js"></script>
-<script src="./libs/apexcharts/apexcharts.js"></script>
-<script src="./libs/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="./libs/peity/jquery.peity.min.js"></script>
-<script src="./libs/chart.js/Chart.bundle.min.js"></script>
-<script src="./libs/owl.carousel/owl.carousel.min.js"></script>
-<script src="./libs/bootstrap/js/bootstrap.min.js"></script>
-<script src="./libs/bootstrap-datepicker/js/bootstrap-datetimepicker.min.js"></script>
-<script src="./js/countto.js"></script>
-<script src="./libs/date-picker/datepicker.js"></script>
-<script src="./libs/rating/js/custom-ratings.js"></script>
-<script src="./libs/rating/js/jquery.barrating.js"></script>
-<script src="./libs/circle-progress/circle-progress.min.js"></script>
-<script src="./libs/simplebar/simplebar.min.js"></script>
-
-
-<!-- APP JS -->
-<script src="./js/main.js"></script>
-<script src="./js/shortcode.js"></script>
-<script src="./js/pages/datepicker.js"></script>
-<script src="./js/pages/chart-circle.js"></script>
-
-
-</body>
-
-</html>

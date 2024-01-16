@@ -320,7 +320,9 @@ file_put_contents('./js/pages/data.json', $data_to_save);
 
 <!-- SCRIPT -->
 <!-- APEX CHART -->
-
+<?php
+include 'copyright.php';
+?>
 <script src="./libs/jquery/jquery.min.js"></script>
 <script src="./libs/moment/min/moment.min.js"></script>
 <script src="./libs/bootstrap/js/bootstrap.bundle.min.js"></script>

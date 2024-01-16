@@ -1,4 +1,7 @@
 <div class="overlay"></div>
+<?php
+include 'copyright.php';
+?>
 
 <!-- SCRIPT -->
 <!-- APEX CHART -->

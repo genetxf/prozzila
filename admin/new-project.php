@@ -3,7 +3,7 @@ $pagetitle = "Add New Project";
 include 'auth.php';
 include 'head.php';
 include 'header.php';
-
+include 'database.php';
 ?>
 
 <!-- MAIN CONTENT -->
@@ -32,39 +32,35 @@ include 'header.php';
                             </div>
                             <div class="row">
                                 <div class="col-md-6 col-sm-12 mb-24">
-                                    <div class="form-group"><label class="form-label">Department:</label> <select
+                                    <div class="form-group">
+                                        <label class="form-label">Department:</label>
+                                        <select
                                                 required name="department"
                                                 class="form-control custom-select select2 select2-hidden-accessible"
                                                 data-placeholder="Select Department" tabindex="-1" aria-hidden="true"
-                                                data-select2-id="select2-data-22-9i9m">
-                                            <option label="Select Department"
-                                                    data-select2-id="select2-data-24-ktnv"></option>
-                                            <option>Designing Department</option>
-                                            <option>Development Department</option>
-                                            <option>Marketing Department</option>
-                                            <option>Human Resource Department</option>
-                                            <option>Managers Department</option>
-                                            <option>Application Department</option>
-                                            <option>Support Department</option>
-                                            <option>IT Department</option>
-                                            <option>Technical Department</option>
-                                            <option>Accounts Department</option>
+                                                data-select2-id="select2-data-22-9i9m"
+                                        >
+                                            <option label="Select Department" data-select2-id="select2-data-24-ktnv"></option>
+
+                                            <?php
+                                            // Check connection
+                                            if ($conn->connect_error) {
+                                                die("Connection failed: " . $conn->connect_error);
+                                            }
+
+                                            // Fetch department data from the database
+                                            $sql = "SELECT department_name FROM departments";
+                                            $result = $conn->query($sql);
+
+                                            if ($result->num_rows > 0) {
+                                                // Output data of each row
+                                                while ($row = $result->fetch_assoc()) {
+                                                    echo "<option>{$row['department_name']}</option>";
+                                                }
+                                            }
+
+                                            ?>
                                         </select>
-                                        <span class="select2 select2-container select2-container--default" dir="ltr"
-                                              data-select2-id="select2-data-23-72at" style="width: 100%;"><span
-                                                    class="selection"><span
-                                                        class="select2-selection select2-selection--single"
-                                                        role="combobox" aria-haspopup="true" aria-expanded="false"
-                                                        tabindex="0" aria-disabled="false"
-                                                        aria-labelledby="select2-attendance-92-container"
-                                                        aria-controls="select2-attendance-92-container"><span
-                                                            class="select2-selection__rendered"
-                                                            id="select2-attendance-92-container" role="textbox"
-                                                            aria-readonly="true" title="Select Department"></span>
-                                        <span class="select2-selection__arrow" role="presentation"><b
-                                                    role="presentation"></b></span>
-                                        </span>
-                                        </span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
                                     </div>
                                 </div>
                                 <div class="col-md-6 col-sm-12 mb-24">
@@ -104,41 +100,13 @@ include 'header.php';
                                     </div>
                                 </div>
                                 <div class="col-md-6 col-sm-12 mb-24">
-                                    <div class="form-group"><label class="form-label">Price ( $ )</label>
-                                        <input type="number" required name="price" class="form-control"
-                                               placeholder="Enter Price"></div>
+                                    <div class="form-group "><label class="form-label">Assign Team:</label>
+                                        <input placeholder="Type to search" type="text" class="form-control typeahead" id="teamnames" name="teamnames" autocomplete="off">
+                                    </div>
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-md-6 col-sm-12 mb-24">
-                                    <div class="form-group "><label class="form-label">Assign Team:</label> <select
-                                                required name="assign_team"
-                                                class="form-control custom-select select2 select2-hidden-accessible"
-                                                data-placeholder="Select Client" tabindex="-1" aria-hidden="true"
-                                                data-select2-id="select2-data-38-9jkg">
-                                            <option label="Select Team" data-select2-id="select2-data-40-q3xu"></option>
-                                            <option>Team 01</option>
-                                            <option>Team 02</option>
-                                            <option>Team 03</option>
-                                        </select>
-                                        <span class="select2 select2-container select2-container--default" dir="ltr"
-                                              data-select2-id="select2-data-39-684b" style="width: 100%;"><span
-                                                    class="selection"><span
-                                                        class="select2-selection select2-selection--single"
-                                                        role="combobox" aria-haspopup="true" aria-expanded="false"
-                                                        tabindex="0" aria-disabled="false"
-                                                        aria-labelledby="select2-attendance-8z-container"
-                                                        aria-controls="select2-attendance-8z-container"><span
-                                                            class="select2-selection__rendered"
-                                                            id="select2-attendance-9z-container" role="textbox"
-                                                            aria-readonly="true" title="Enter Client"></span>
-                                        <span class="select2-selection__arrow" role="presentation"><b
-                                                    role="presentation"></b></span>
-                                        </span>
-                                        </span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 col-sm-12 mb-24">
+                                <div class="col mb-24">
                                     <div class="form-group"><label class="form-label">Form:</label>
                                         <div class="input-group">
                                             <div class="input-group-prepend">
@@ -149,7 +117,7 @@ include 'header.php';
                                                    type="text"></div>
                                     </div>
                                 </div>
-                                <div class="col-md-3 col-sm-12 mb-24">
+                                <div class="col mb-24">
                                     <div class="form-group"><label class="form-label">To:</label>
                                         <div class="input-group">
                                             <div class="input-group-prepend">
@@ -168,7 +136,7 @@ include 'header.php';
                             </div>
                             <div class="row">
 
-                                    <div class="col-md-6 col-sm-12">
+                                    <div class="col-md-6 col-sm-12 mb-0">
                                         <div class="form-group">
                                             <label class="form-label">Attachment:</label>
                                             <span>
@@ -178,7 +146,7 @@ include 'header.php';
                                     </div>
 
 
-                                <div class="col-md-6 col-sm-12">
+                                <div class="col-md-6 col-sm-12 mb-0">
                                     <div class="custom-controls-stacked d-lg-flex align-items-center">
                                         <label class="form-label mt-1 fs-18 font-w500 color-primary">Work Status
                                             :</label>
@@ -201,7 +169,7 @@ include 'header.php';
                                 </div>
                             </div>
                     </div>
-                    <div class="gr-btn mt-15"><a href="#" class="btn btn-danger btn-lg mr-15 fs-16">CLOSE</a>
+                    <div class="gr-btn mt-15">
                         <input type="submit" name="submit" value="Submit" class="btn btn-primary btn-lg fs-16"
                                onclick="not1()">
                         </form>
@@ -307,7 +275,7 @@ include 'header.php';
     </div>
     <!-- END MAIN CONTENT -->
     <?php include 'footer.php';
-    include 'database.php';
+
 
     // Fetch usernames
     $sql22 = "SELECT name FROM client";
@@ -316,6 +284,15 @@ include 'header.php';
     if ($result22->num_rows > 0) {
         while ($row = $result22->fetch_assoc()) {
             $usernames[] = $row['name'];
+        }
+    }
+    // Fetch usernames
+    $sql26 = "SELECT name FROM team";
+    $result26 = $conn->query($sql26);
+    $teamnames = array();
+    if ($result22->num_rows > 0) {
+        while ($row = $result26->fetch_assoc()) {
+            $teamnames[] = $row['name'];
         }
     }
 
@@ -334,6 +311,13 @@ include 'header.php';
             $('.typeahead[name="username"]').typeahead({
                 source: usernames
             });
+            var teamnames = <?php echo json_encode($teamnames); ?>;
+            $('.typeahead[name="teamnames"]').typeahead({
+                source: teamnames
+            });
         });
     </script>
+
+
+
 

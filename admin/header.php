@@ -62,11 +62,6 @@ $logid = $_SESSION['id'];
                             Project List
                         </a>
                     </li>
-                    <li>
-                        <a href="new-project.php">
-                            New Project
-                        </a>
-                    </li>
                 </ul>
             </li>
 
