@@ -32,97 +32,7 @@ if ($result->num_rows > 0) {
     <div class="main">
 
         <div class="main-content">
-            <div class="row">
-                <div class="col col-sm-12">
-                    <div class="box card-box">
-                        <div class="icon-box bg-color-6 d-block">
 
-                            <div class="content text-center color-6">
-                                <h5 class="title-box fs-17 font-w500">Total Project</h5>
-                                <div class="themesflat-counter fs-18 font-wb">
-                                    <span class="number" data-from="0" data-to="309" data-speed="2500"
-                                          data-inviewport="yes"><?php $sql4 = "SELECT * FROM `projects`";
-                                        $result4 = $conn->query($sql4);
-                                        $total = 0;
-                                        if ($result4->num_rows > 0) {
-                                            while ($row4 = $result4->fetch_assoc()) {
-                                                $total = $total + 1;
-                                            }
-                                            echo $total;
-
-                                        }
-                                        ?>+</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="icon-box bg-color-7 d-block">
-
-                            <div class="content text-center color-7">
-                                <h5 class="title-box fs-17 font-w500">Pending Project</h5>
-                                <div class="themesflat-counter fs-18 font-wb">
-                                <span class="number" data-from="0" data-to="309" data-speed="2500"
-                                      data-inviewport="yes"><?php $sql4 = "SELECT * FROM projects
-WHERE work_status = 'Pending';";
-                                    $result4 = $conn->query($sql4);
-                                    $total = 0;
-                                    if ($result4->num_rows > 0) {
-                                        while ($row4 = $result4->fetch_assoc()) {
-                                            $total = $total + 1;
-                                        }
-                                        echo $total;
-
-                                    }
-                                    ?> +</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="icon-box bg-color-8 d-block">
-
-                            <div class="content text-center color-8">
-                                <h5 class="title-box fs-17 font-w500">On Going project</h5>
-                                <div class="themesflat-counter fs-18 font-wb">
-                                <span class="number" data-from="0" data-to="309" data-speed="2500"
-                                      data-inviewport="yes"><?php $sql4 = "SELECT * FROM projects
-WHERE work_status = 'On Progress';";
-                                    $result4 = $conn->query($sql4);
-                                    $total = 0;
-                                    if ($result4->num_rows > 0) {
-                                        while ($row4 = $result4->fetch_assoc()) {
-                                            $total = $total + 1;
-                                        }
-                                        echo $total;
-
-                                    }
-                                    ?> +</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="icon-box bg-color-9 d-block">
-
-                            <div class="content text-center color-9">
-                                <h5 class="title-box fs-17 font-w500">Complete Project</h5>
-                                <div class="themesflat-counter fs-18 font-wb">
-                                <span class="number" data-from="0" data-to="309" data-speed="2500"
-                                      data-inviewport="yes"><?php $sql4 = "SELECT * FROM projects
-WHERE work_status = 'Completed';";
-                                    $result4 = $conn->query($sql4);
-                                    $total = 0;
-                                    if ($result4->num_rows > 0) {
-                                        while ($row4 = $result4->fetch_assoc()) {
-                                            $total = $total + 1;
-                                        }
-                                        echo $total;
-
-                                    }
-                                    ?> +</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-            </div>
             <div class="row">
                 <div class="col-12">
                     <div class="box project">
@@ -154,14 +64,8 @@ WHERE work_status = 'Completed';";
                                     <h5><?php echo $teamname; ?></h5>
                                 </a>
                             </div>
-                            <div class="action">
-                                <a href="#" class="comment">32 Comments</a>
-                                <a href="#" class="edit">Edit</a>
-                                <a href="#" class="invite"><i class="fas fa-user-plus mr-5"></i>Invite People</a>
-                            </div>
-                            <ul class="user-list s2">
-                                <li class="total"><span>+4</span></li>
-                            </ul>
+
+
                         </div>
                         <div class="divider"></div>
                         <div class="box-body content">
@@ -183,154 +87,12 @@ WHERE work_status = 'Completed';";
                                 <li>
                                     <div class="img-dv">
                                         <img style=" width: 320px;"  src="./images/product/project4.jpg" alt="">
-                                        <div class="overlay-1"></div>
-                                        <a href="#" class="more">
-                                            <h5 class="text-white">+ More 5 files</h5>
-                                        </a>
 
                                     </div>
 
 
                                 </li>
                             </ul>
-                            <div class="form-chat">
-                                <form action="#" method="get" accept-charset="utf-8">
-                                    <div class="message-form-chat">
-                                        <!-- /.pin -->
-                                        <span class="message-text">
-                                            <textarea name="message" placeholder="Type comment here"
-                                                      required="required"></textarea>
-                                        </span>
-                                        <!-- /.message-text -->
-                                        <span class="camera">
-                                            <a href="#" title="">
-                                                <i class="fas fa-smile"></i>
-                                            </a>
-                                        </span>
-                                        <!-- /.camera -->
-                                        <span class="icon-message">
-                                            <a href="#" title="">
-                                                <i class="fas fa-paperclip"></i>
-                                            </a>
-                                        </span>
-                                        <!-- /.icon-right -->
-                                        <!-- <div class="icon-mobile">
-                                            <ul>
-                                                <li>
-                                                    <a href="#" title=""><i class="fas fa-smile"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" title=""><i class="fas fa-paperclip"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div> -->
-                                        <!-- /.icon-right -->
-                                        <span class="btn-send">
-                                            <button class="waves-effect" type="submit">Send <i
-                                                        class="fas fa-paper-plane"></i></button>
-                                        </span>
-                                        <!-- /.btn-send -->
-
-                                    </div>
-                                    <!-- /.message-form-chat -->
-                                    <div class="clearfix"></div>
-                                </form>
-                                <!-- /form -->
-                            </div>
-
-                            <div class="project-description mt-10">
-                                <h4>Project Description</h4>
-                                <div class="comment-box">
-                                    <div class="comment d-flex">
-                                        <div class="left d-flex">
-                                            <div class="comment-pic">
-                                                <img src="./images/avatar/cmt-01.png" alt="">
-                                            </div>
-                                            <div class="comment-body">
-                                                <div class="name">
-                                                    <h5 class="font-w600 fs-18">Elizabeth Holland</h5>
-                                                    <p class="text mb-0 fs-18">Duis pretium gravida enim, vel maximus
-                                                        ligula fermentum a. Sed rhoncus eget ex id egestas. Nam nec nisl
-                                                        placerat, tempus erat a, condimentum metus.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="right">
-                                            <div class="group-action mt-10">
-                                                <a href="#" class="like active"><i class="fas fa-thumbs-up"></i>34 Like</a>
-                                                <a href="#" class="reply"><i class="fas fa-reply-all"></i>Reply</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="divider"></div>
-                                    <div class="comment d-flex">
-                                        <div class="left d-flex">
-                                            <div class="comment-pic">
-                                                <img src="./images/avatar/cmt-02.png" alt="">
-                                            </div>
-                                            <div class="comment-body">
-                                                <div class="name">
-                                                    <h5 class="font-w600 fs-18">Mike Palmer</h5>
-                                                    <p class="text mb-0 fs-18">Donec dapibus mauris id odio ornare
-                                                        tempus. Duis sit amet accumsan justo, quis tempor ligula.
-                                                        Quisque quis pharetra felis. Ut quis consequat orci, at
-                                                        consequat felis. Suspendisse auctor laoreet placerat.
-                                                        Nam et risus non lacus dignissim lacinia sit amet nec eros.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="right">
-                                            <div class="group-action mt-10">
-                                                <a href="#" class="like"><i class="fas fa-thumbs-up"></i>34 Like</a>
-                                                <a href="#" class="reply"><i class="fas fa-reply-all"></i>Reply</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="divider"></div>
-                                    <div class="comment rep d-flex">
-                                        <div class="left d-flex">
-                                            <div class="comment-pic">
-                                                <img src="./images/avatar/cmt-03.png" alt="">
-                                            </div>
-                                            <div class="comment-body">
-                                                <div class="name">
-                                                    <h5 class="font-w600 fs-18">Beatrice Collins</h5>
-                                                    <p class="text mb-0 fs-18">Donec dapibus mauris id odio ornare
-                                                        tempus. Duis sit amet accumsan justo, quis tempor ligula.
-                                                        Quisque quis pharetra felis. Ut quis consequat orci.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="right">
-                                            <div class="group-action mt-10">
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="divider"></div>
-                                    <div class="comment rep d-flex">
-                                        <div class="left d-flex">
-                                            <div class="comment-pic">
-                                                <img src="./images/avatar/cmt-04.png" alt="">
-                                            </div>
-                                            <div class="comment-body">
-                                                <div class="name">
-                                                    <h5 class="font-w600 fs-18">Roger Meyer</h5>
-                                                    <p class="text mb-0 fs-18">Donec dapibus mauris id odio ornare
-                                                        tempus. Duis sit amet accumsan justo, quis tempor ligula.
-                                                        Quisque quis pharetra felis. Ut quis consequat orci.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="right">
-                                            <div class="group-action mt-10">
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="divider mb-0"></div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>

@@ -46,6 +46,97 @@ include 'header.php';
 <div class="main">
     <div class="main-content user">
         <div class="row">
+            <div class="col col-sm-12">
+                <div class="box card-box">
+                    <div class="icon-box bg-color-6 d-block">
+
+                        <div class="content text-center color-6">
+                            <h5 class="title-box fs-17 font-w500">Total Project</h5>
+                            <div class="themesflat-counter fs-18 font-wb">
+                                    <span class="number" data-from="0" data-to="309" data-speed="2500"
+                                          data-inviewport="yes"><?php $sql4 = "SELECT * FROM `projects`";
+                                        $result4 = $conn->query($sql4);
+                                        $total = 0;
+                                        if ($result4->num_rows > 0) {
+                                            while ($row4 = $result4->fetch_assoc()) {
+                                                $total = $total + 1;
+                                            }
+                                            echo $total;
+
+                                        }
+                                        ?>+</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="icon-box bg-color-7 d-block">
+
+                        <div class="content text-center color-7">
+                            <h5 class="title-box fs-17 font-w500">Pending Project</h5>
+                            <div class="themesflat-counter fs-18 font-wb">
+                                <span class="number" data-from="0" data-to="309" data-speed="2500"
+                                      data-inviewport="yes"><?php $sql4 = "SELECT * FROM projects
+WHERE work_status = 'Pending';";
+                                    $result4 = $conn->query($sql4);
+                                    $total = 0;
+                                    if ($result4->num_rows > 0) {
+                                        while ($row4 = $result4->fetch_assoc()) {
+                                            $total = $total + 1;
+                                        }
+                                        echo $total;
+
+                                    }
+                                    ?> +</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="icon-box bg-color-8 d-block">
+
+                        <div class="content text-center color-8">
+                            <h5 class="title-box fs-17 font-w500">On Going project</h5>
+                            <div class="themesflat-counter fs-18 font-wb">
+                                <span class="number" data-from="0" data-to="309" data-speed="2500"
+                                      data-inviewport="yes"><?php $sql4 = "SELECT * FROM projects
+WHERE work_status = 'On Progress';";
+                                    $result4 = $conn->query($sql4);
+                                    $total = 0;
+                                    if ($result4->num_rows > 0) {
+                                        while ($row4 = $result4->fetch_assoc()) {
+                                            $total = $total + 1;
+                                        }
+                                        echo $total;
+
+                                    }
+                                    ?> +</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="icon-box bg-color-9 d-block">
+
+                        <div class="content text-center color-9">
+                            <h5 class="title-box fs-17 font-w500">Complete Project</h5>
+                            <div class="themesflat-counter fs-18 font-wb">
+                                <span class="number" data-from="0" data-to="309" data-speed="2500"
+                                      data-inviewport="yes"><?php $sql4 = "SELECT * FROM projects
+WHERE work_status = 'Completed';";
+                                    $result4 = $conn->query($sql4);
+                                    $total = 0;
+                                    if ($result4->num_rows > 0) {
+                                        while ($row4 = $result4->fetch_assoc()) {
+                                            $total = $total + 1;
+                                        }
+                                        echo $total;
+
+                                    }
+                                    ?> +</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="row">
             <div class="col-12">
                 <div class="box project">
                     <div class="box-header">
