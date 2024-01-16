@@ -9,7 +9,7 @@ include 'auth.php';
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-        ProZZila - Project Management System
+        prozzila - Project Management System
     </title>
     <link rel="shortcut icon" href="./images/favicon.svg" type="image/png">
     <!-- GOOGLE FONT -->

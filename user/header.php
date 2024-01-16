@@ -2,6 +2,7 @@
 $loguser = $_SESSION['user'];
 $logemail = $_SESSION['email'];
 $logpicture  = $_SESSION['picture'];
+$logid = $_SESSION['id'];
 ?>
 <body class="sidebar-expand light active">
 
@@ -30,11 +31,6 @@ $logpicture  = $_SESSION['picture'];
                     <li>
                         <a href="index.php">
                             Dashboard
-                        </a>
-                    </li>
-                    <li>
-                        <a href="userprofile.php">
-                            User Profile
                         </a>
                     </li>
 
@@ -66,19 +62,7 @@ $logpicture  = $_SESSION['picture'];
                     <span>Board</span>
                 </a>
             </li>
-            <li>
-                <a href="calendar.php">
-                    <i class='bx bx-calendar'></i>
-                    <span>Calendar</span>
-                </a>
-            </li>
 
-            <li>
-                <a href="message.php">
-                    <i class='bx bxs-message-rounded-detail'></i>
-                    <span>Message</span>
-                </a>
-            </li>
             <li>
                 <a class="darkmode-toggle" id="darkmode-toggle" onclick="switchTheme()">
                     <div>
@@ -124,7 +108,7 @@ $logpicture  = $_SESSION['picture'];
             </button>
             <div class="dropdown-menu dropdown-menu-end">
                 <!-- item-->
-                <a class="dropdown-item" href="#"><i class="bx bx-user font-size-16 align-middle me-1"></i> <span>Profile</span></a>
+                <a class="dropdown-item" href="userprofile.php"><i class="bx bx-user font-size-16 align-middle me-1"></i> <span>Profile</span></a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item text-danger" href="logout.php"><i
                             class="bx bx-power-off font-size-16 align-middle me-1 text-danger"></i> <span>Logout</span></a>

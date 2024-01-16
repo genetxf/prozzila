@@ -37,132 +37,14 @@ include 'header.php';
 
 
     <div class="main-content board">
+
         <div class="row">
             <div class="col-12">
-                <div class="box card-box">
-                    <div class="icon-box bg-color-1">
-                        <div class="icon bg-icon-1">
-                            <i class="bx bxs-bell bx-tada"></i>
-                        </div>
-                        <div class="content">
-                            <h5 class="title-box">Notification</h5>
-                            <p class="color-1 mb-0 pt-4">5 Unread notification</p>
-                        </div>
-                    </div>
-                    <div class="icon-box bg-color-2">
-                        <div class="icon bg-icon-2">
-                            <i class='bx bxs-message-rounded'></i>
-                        </div>
-                        <div class="content click-c">
-                            <h5 class="title-box">Message</h5>
-                            <p class="color-2 mb-0 pt-4">5 Unread notification</p>
-                        </div>
-                        <div class="notification-list card">
-                            <div class="top box-header">
-                                <h5>Notification</h5>
-
-                            </div>
-                            <div class="pd-1r">
-                                <div class="divider"></div>
-                            </div>
-
-                            <div class="box-body">
-                                <ul class="list">
-                                    <li class="d-flex no-seen">
-                                        <div class="img-mess"><img class="mr-14" src="./images/avatar/avt-1.png"
-                                                                   alt="avt"></div>
-                                        <div class="info">
-                                            <a href="#" class="font-w600 mb-0 color-primary">Elizabeth Holland</a>
-                                            <p class="pb-0 mb-0 line-h14 mt-6">Proin ac quam et lectus vestibulum</p>
-                                        </div>
-                                    </li>
-
-                                    <li class="d-flex">
-                                        <div class="img-mess"><img class="mr-14" src="./images/avatar/avt-1.png"
-                                                                   alt="avt"></div>
-                                        <div class="info">
-                                            <a href="#" class="font-w600 mb-0 color-primary">Elizabeth Holland</a>
-                                            <p class="pb-0 mb-0 line-h14 mt-6">Proin ac quam et lectus vestibulum</p>
-                                        </div>
-                                    </li>
-
-                                </ul>
-                                <div class="btn-view">
-                                    <a class="font-w600 h5" href="message.html">View All</a>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="icon-box bg-color-3">
-                        <a class="create d-flex" href="calendar.html">
-                            <div class="icon bg-icon-3">
-                                <i class="bx bx-calendar"></i>
-                            </div>
-                            <div class="content">
-                                <h5 class="title-box">Calendar</h5>
-                                <p class="color-3 mb-0 pt-4">5 Unread notification</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="icon-box bg-color-4">
-                        <a class="create d-flex" href="#" data-toggle="modal" data-target="#add_project">
-                            <div class="icon bg-white">
-                                <i class="bx bx-plus"></i>
-                            </div>
-                            <div class="content d-flex align-items-center">
-                                <h5 class="color-white">Create New Project</h5>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12">
-                <div class="box">
+                <div class="box project">
                     <div class="box-header">
-                        <h4 class="box-title">Here will be full project name</h4>
-                        <div class="box-right d-flex">
-                            <a class="btn" href="project-details.html">Project Details</a>
-                            <div class="icon-ratting">
-                                <i class='bx bxs-star'></i>
-                            </div>
-                            <div class="dropdown ml-14">
-                                <a href="javascript:void(0);" class="btn-link" data-bs-toggle="dropdown"
-                                   aria-expanded="false">
-                                    <i class='bx bx-dots-vertical-rounded fs-22'></i>
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-right">
-                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_project"><i
-                                                class="bx bx-trash"></i> Delete</a>
-                                    <a class="dropdown-item" href="#"><i class="bx bx-edit mr-5"></i>Edit</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="divider"></div>
-                    <div class="box-body d-flex justify-content-between pb-0">
-                        <div class="team-name">
-                            <a href="#" class="team">
-                                <div class="icon"><i class="fas fa-tags"></i></div>
-                                <h5>Team Name</h5>
-                            </a>
-                        </div>
-                        <div class="action">
-                            <a href="#" class="comment">32 Comments</a>
-                            <a href="#" class="edit">Edit</a>
-                            <a href="#" class="invite"><i class="fas fa-user-plus mr-5"></i>Invite People</a>
-                            <a href="#" class="add">New<i class="fas fa-caret-down pl-12"></i></a>
-                        </div>
-                        <ul class="user-list s2">
-                            <li><img src="./images/avatar/team-1.png" alt="user"></li>
-                            <li><img src="./images/avatar/team-2.png" alt="user"></li>
-                            <li><img src="./images/avatar/team-3.png" alt="user"></li>
-                            <li><img src="./images/avatar/team-4.png" alt="user"></li>
-                            <li><img src="./images/avatar/team-5.png" alt="user"></li>
-                            <li class="total"><span>+4</span></li>
-                        </ul>
+                        <h4 class="box-title">Kanban Board</h4>
+                        <a class="btn btn-primary" href="testtask.php"><i class="fas fa-plus mr-5"></i>Add Task
+                        </a>
                     </div>
                 </div>
             </div>
@@ -201,8 +83,9 @@ include 'header.php';
 
                                 ?>
                                 <div class="panel">
-                                    <div class="kanban-box item-box ui-sortable-handle">
-                                        <!-- Existing code... -->
+                                    <div class="kanban-box item-box ui-sortable-handle" data-card-id="<?= $cardid ?>" data-card-status="To-Do">
+
+                                    <!-- Existing code... -->
                                         <div class="content-box">
                                             <h6 class="title fs-16"><?= $row['title'] ?></h6>
                                             <p class="description"><?= $row['description'] ?></p>
@@ -218,10 +101,51 @@ include 'header.php';
 
                                             <div class="divider d-flex align-items-center my-3"></div>
 
-                                            <p class="mb-2">
-                                                <i class="bx bx-list-check align-middle" style=" font-size: 30px;"></i>
-                                                <span>1/4</span>
-                                            </p>
+
+
+                                            <?php
+
+                                            // SQL query for incomplete tasks count
+                                            $sqlIncomplete = "SELECT COUNT(*) AS incomplete_task_count 
+                  FROM tasks 
+                  WHERE status != 'complete'";
+
+                                            $resultIncomplete = $conn->query($sqlIncomplete);
+
+                                            // Check if the query was successful
+                                            if ($resultIncomplete) {
+                                                // Fetch the result as an associative array
+                                                $rowIncomplete = $resultIncomplete->fetch_assoc();
+
+                                                // Total count query
+                                                $sqlTotal = "SELECT COUNT(*) AS total_task_count FROM tasks where card_id = $cardid";
+                                                $resultTotal = $conn->query($sqlTotal);
+
+                                                // Check if the query was successful
+                                                if ($resultTotal) {
+                                                    // Fetch the total count
+                                                    $rowTotal = $resultTotal->fetch_assoc();
+                                            ?>
+                                                    <p class="mb-2">
+                                                        <i class="bx bx-list-check align-middle" style=" font-size: 30px;"></i>
+                                                        <span> <?php echo $rowIncomplete["incomplete_task_count"]; ?>/<?php echo $rowTotal["total_task_count"]; ?></span>
+                                                    </p>
+                                                    <?php
+
+                                                } else {
+                                                    // Output an error message if the total count query fails
+                                                    echo "Error: " . $conn->error;
+                                                }
+                                            } else {
+                                                // Output an error message if the incomplete count query fails
+                                                echo "Error: " . $conn->error;
+                                            }
+
+                                            // Close the connection
+
+
+                                            ?>
+
                                             <div class="progress skill-progress mt-5 mb-15" style="height:7px;">
                                                 <div class="progress-bar progress-animated"
                                                      style="width: 78%; height:7px;" role="progressbar">
@@ -243,6 +167,8 @@ include 'header.php';
                                         </div>
                                     </div>
                                 </div>
+
+
                                     <!-- Assign Task Modal -->
                                     <div id="add_task_modal<?= $cardid ?>" class="modal custom-modal fade" style="display: none;" aria-hidden="true">
                                         <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
@@ -469,6 +395,7 @@ include 'header.php';
                                    data-target="#add_card_modal"><i class="fas fa-plus mr-14"></i>Add a card</a>
                             </div>
                         </div>
+
                         <div class="kanban-list kanban-progress">
                             <div class="kanban-header">
                                 <h6 class="card-title">In Progress</h6>
@@ -904,7 +831,26 @@ if ($resultAssignment->num_rows > 0) {
         });
     });
 </script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Attach a sortupdate event listener to the Kanban board
+        $('.kanban-wrap').on('sortupdate', function (event, ui) {
+            // Get the card ID and new status
+            var cardId = ui.item.data('data-card-id');
+            var newStatus = ui.item.parent().prev('.kanban-header').find('.card-title').text().trim();
 
+            // AJAX request to update the card status in the database
+            $.ajax({
+                type: 'POST',
+                url: 'update_card_status.php', // replace with your PHP script
+                data: { cardId: cardId, newStatus: newStatus },
+                success: function (response) {
+                    console.log(response); // Log the response from the server
+                }
+            });
+        });
+    });
+</script>
 
 
 

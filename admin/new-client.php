@@ -34,7 +34,7 @@ include 'header.php';
                                     </div>
                                 </div>
 
-                                <div class="col-md-6 col-sm-12 mb-24">
+                                <div class="col-12 mb-24">
                                     <div class="form-group"><label class="form-label">Email</label> <input required
                                                                                                            type="email"
                                                                                                            name="email"
@@ -42,14 +42,7 @@ include 'header.php';
                                                                                                            placeholder="Enter Email">
                                     </div>
                                 </div>
-                                <div class="col-md-6 col-sm-12 mb-24">
-                                    <div class="form-group"><label class="form-label">Password</label> <input required
-                                                                                                           type="password"
-                                                                                                           name="password"
-                                                                                                           class="form-control"
-                                                                                                           placeholder="**********">
-                                    </div>
-                                </div>
+
                                 <div class="col-md-6 col-sm-12 mb-24">
                                     <div class="form-group"><label class="form-label">Contact No</label> <input required
                                                                                                                 type="text"

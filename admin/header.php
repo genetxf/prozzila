@@ -34,13 +34,13 @@ $logid = $_SESSION['id'];
                         </a>
                     </li>
                     <li>
-                        <a href="userprofile.php">
-                            User Profile
+                        <a href="registration.php">
+                            New Admin Account
                         </a>
                     </li>
                     <li>
-                        <a href="registration.php">
-                            New Account
+                        <a href="userregistration.php">
+                            New Employee Account
                         </a>
                     </li>
                 </ul>
@@ -90,19 +90,7 @@ $logid = $_SESSION['id'];
                     <span>Board</span>
                 </a>
             </li>
-            <li>
-                <a href="calendar.php">
-                    <i class='bx bx-calendar'></i>
-                    <span>Calendar</span>
-                </a>
-            </li>
 
-            <li>
-                <a href="message.php">
-                    <i class='bx bxs-message-rounded-detail'></i>
-                    <span>Message</span>
-                </a>
-            </li>
             <li>
                 <a class="darkmode-toggle" id="darkmode-toggle" onclick="switchTheme()">
                     <div>

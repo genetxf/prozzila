@@ -21,7 +21,6 @@ if  (isset($_POST['submit']))  {
     $department = mysqli_real_escape_string($conn, $_POST['department']);
     $priority = mysqli_real_escape_string($conn, $_POST['priority']);
     $client = mysqli_real_escape_string($conn, $_POST['client']);
-    $price = mysqli_real_escape_string($conn, $_POST['price']);
     $assignTeam = mysqli_real_escape_string($conn, $_POST['assign_team']);
     $startDate = mysqli_real_escape_string($conn, $_POST['start_date']);
     $endDate = mysqli_real_escape_string($conn, $_POST['end_date']);
@@ -32,8 +31,8 @@ if  (isset($_POST['submit']))  {
 
 // Retrieve and sanitize other form fields as needed...
 
-    $sql = "INSERT INTO `projects`(`project_id`, `project_title`, `department`, `assign_team`, `priority`, `client`, `price`, `start_date`, `end_date`, `description`, `attachment`, `work_status`)
-                           VALUES ('$projectID', '$projectTitle', '$department', '$assignTeam', '$priority', '$client', '$price', '$startDate', '$endDate', '$description', '$attachment', '$workStatus')";
+    $sql = "INSERT INTO `projects`(`project_id`, `project_title`, `department`, `assign_team`, `priority`, `client`, `start_date`, `end_date`, `description`, `attachment`, `work_status`)
+                           VALUES ('$projectID', '$projectTitle', '$department', '$assignTeam', '$priority', '$client', '$startDate', '$endDate', '$description', '$attachment', '$workStatus')";
 //Upload Images
     $targetDirectory = "images/profile/"; // Change this to your desired upload directory
     $targetFile = $targetDirectory . basename($_FILES["attachment_file"]["name"]);
@@ -45,46 +44,60 @@ if  (isset($_POST['submit']))  {
     if ($check !== false) {
         $uploadOk = 1;
     } else {
-        echo "File is not an image.";
+        $error = "File is not an image.";
+        include 'alert.php';
         $uploadOk = 0;
     }
 
     // Check if file already exists
     if (file_exists($targetFile)) {
-        echo "Sorry, file already exists.";
+
+        $error = "Sorry, file already exists.";
+        include 'alert.php';
         $uploadOk = 0;
     }
 
     // Check file size (adjust the size limit if needed)
     if ($_FILES["attachment_file"]["size"] > 500000) {
-        echo "Sorry, your file is too large.";
+        $error = "Sorry, your file is too large. Upload Under 5MB please.";
+        include 'alert.php';
         $uploadOk = 0;
     }
 
     // Allow only certain file formats (you can adjust/add formats as needed)
     $allowedFormats = array("jpg", "png", "jpeg", "gif");
     if (!in_array($imageFileType, $allowedFormats)) {
-        echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+
+        $error = "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+        include 'alert.php';
         $uploadOk = 0;
     }
 
     // Check if $uploadOk is set to 0 by an error
     if ($uploadOk == 0) {
-        echo "Sorry, your file was not uploaded.";
+
+        $error = "Sorry, your file was not uploaded.";
+        include 'alert.php';
     } else {
         // If everything is ok, try to upload file
         if (move_uploaded_file($_FILES["attachment_file"]["tmp_name"], $targetFile)) {
-            echo "The file " . htmlspecialchars(basename($_FILES["attachment_file"]["name"])) . " has been uploaded.";
+
+            $error =  "The file " . htmlspecialchars(basename($_FILES["attachment_file"]["name"])) . " has been uploaded.";
+            include 'alert.php';
         } else {
-            echo "Sorry, there was an error uploading your file.";
+
+            $error = "Sorry, there was an error uploading your file.";
+            include 'alert.php';
         }
     }
 //Success Check
 if ($conn->query($sql) === TRUE) {
-echo "New project created successfully";
+
+    $success ="'$projectTitle' New project created successfully". "<br>";
+    include 'success.php';
 // Additional actions after successful insertion, like redirecting or displaying a success message
 } else {
-echo "Error: " . $sql . "<br>" . $conn->error;
+    include 'alert.php';
 }
 }
 

@@ -73,20 +73,20 @@ if ($result->num_rows > 0) {
                             <p class="fs-18 font-w400 font-main mt-27 mb-29"><?php echo $description; ?>.</p>
                             <ul class="list-img">
                                 <li>
-                                    <div class="img-dv"><img style=" width: 320px;" src="./images/product/project1.jpg" alt=""></div>
+                                    <div class="img-dv"><img style=" width: 320px;" src="./images/product/<?php echo $department; ?>1.jpg" alt=""></div>
 
                                 </li>
                                 <li>
-                                    <div class="img-dv"><img style=" width: 320px;" src="./images/product/project2.jpg" alt=""></div>
+                                    <div class="img-dv"><img style=" width: 320px;" src="./images/product/<?php echo $department; ?>2.jpg" alt=""></div>
 
                                 </li>
                                 <li>
-                                    <div class="img-dv"><img style=" width: 320px;" src="./images/product/project3.jpg" alt=""></div>
+                                    <div class="img-dv"><img style=" width: 320px;" src="./images/product/<?php echo $department; ?>3.jpg" alt=""></div>
 
                                 </li>
                                 <li>
                                     <div class="img-dv">
-                                        <img style=" width: 320px;"  src="./images/product/project4.jpg" alt="">
+                                        <img style=" width: 320px;"  src="./images/product/<?php echo $department; ?>4.jpg" alt="">
 
                                     </div>
 

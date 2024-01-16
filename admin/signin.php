@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     include 'database.php';
 
     // Prepare the SQL statement
-    $sql = "SELECT * FROM employees WHERE username = '$user' AND password = '$hashedPassword'";
+    $sql = "SELECT * FROM admins WHERE username = '$user' AND password = '$hashedPassword'";
 
     // Execute the SQL statement
     $result = $conn->query($sql);

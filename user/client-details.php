@@ -1,3 +1,9 @@
+<?php
+include 'auth.php';
+include 'database.php';
+// Query to fetch project details
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,249 +34,11 @@
     <link rel="stylesheet" href="./css/responsive.css">
 </head>
 
-<body class="sidebar-expand">
+<?php
+$pagetitle = "Client Details";
+include 'header.php';
 
-    <!-- SIDEBAR -->
-    <div class="sidebar">
-        <div class="sidebar-logo">
-                        <a href="index.php">
-                <img src="./images/logo.svg" alt="ProZZila logo">
-            </a>
-            <div class="sidebar-close" id="sidebar-close">
-                <i class='bx bx-left-arrow-alt'></i>
-            </div>
-        </div>
-        <!-- SIDEBAR MENU -->
-        <div class="simlebar-sc" data-simplebar>
-            <ul class="sidebar-menu tf">
-                <li class="sidebar-submenu">
-                    <a href="index.php" class="sidebar-menu-dropdown">
-                        <i class='bx bxs-home'></i>
-                        <span>Dashboard</span>
-                        <div class="dropdown-icon">
-                            <i class='bx bx-chevron-down'></i>
-                        </div>
-                    </a>
-                    <ul class="sidebar-menu sidebar-menu-dropdown-content">
-                        <li>
-                            <a href="index.php">
-                                Dashboard
-                            </a>
-                        </li>
-                        <li>
-                            <a href="user-profile.html">
-                                User Profile
-                            </a>
-                        </li>
-<li>
-                            <a href="user-login.html">
-                                User Login
-                            </a>
-                        </li>
-                        <li>
-                            <a href="new-account.html">
-                               New Account
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="sidebar-submenu">
-                    <a href="project.html" class="sidebar-menu-dropdown">
-                        <i class='bx bxs-bolt'></i>
-                        <span>Project</span>
-                        <div class="dropdown-icon"><i class='bx bx-chevron-down'></i></div>
-                    </a>
-                    <ul class="sidebar-menu sidebar-menu-dropdown-content">
-                        <li>
-                            <a href="project.html">
-                               Project
-                            </a>
-                        </li>
-                        <li>
-                            <a href="project-details.html">
-                                Project Details
-                            </a>
-                        </li>
-                        <li>
-                            <a href="new-project.html">
-                                New Project
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-
-                <li class="sidebar-submenu">
-                    <a href="clients.html" class="sidebar-menu-dropdown current-menu-item">
-                        <i class='bx bxs-user'></i>
-                        <span>Client</span>
-                        <div class="dropdown-icon"><i class='bx bx-chevron-down'></i></div>
-                    </a>
-                    <ul class="sidebar-menu sidebar-menu-dropdown-content active">
-                                                <li>
-                            <a href="clients.html">
-                               Manager Client
-                            </a>
-                        </li>
-                        <li>
-                            <a href="client-details.html">
-                                Client Details
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="board.html">
-                        <i class='bx bxs-dashboard'></i>
-                        <span>Board</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="calendar.html">
-                        <i class='bx bx-calendar'></i>
-                        <span>Calendar</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="message.html">
-                        <i class='bx bxs-message-rounded-detail' ></i>
-                        <span>Message</span>
-                    </a>
-                </li>
-                <li class="sidebar-submenu">
-                    <a href="chart-apex.html" class="sidebar-menu-dropdown">
-                        <i class='bx bxs-component' ></i>
-                        <span>Components</span>
-                        <div class="dropdown-icon"><i class='bx bx-chevron-down'></i></div>
-                    </a>
-                    <ul class="sidebar-menu sidebar-menu-dropdown-content">
-                        <li>
-                            <a href="chart-apex.html">
-                                Apex Charts
-                            </a>
-                        </li>
-
-                    </ul>
-                </li>
-                <li>
-                    <a class="darkmode-toggle" id="darkmode-toggle" onclick="switchTheme()">
-                        <div>
-                            <i class='bx bx-cog mr-10'></i>
-                            <span>darkmode</span>
-                        </div>
-
-                        <span class="darkmode-switch"></span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <!-- END SIDEBAR MENU -->
-    </div>
-    <!-- END SIDEBAR -->
-
-        <!-- Main Header -->
-        <div class="main-header">
-            <div class="d-flex">
-                <div class="mobile-toggle" id="mobile-toggle">
-                    <i class='bx bx-menu'></i>
-                </div>
-                <div class="main-title">
-                    Client Details
-                </div>
-            </div>
-    
-            <div class="d-flex align-items-center">
-    
-                <!-- App Search-->
-                <form class="app-search d-none d-lg-block">
-                    <div class="position-relative">
-                        <input type="text" class="form-control" placeholder="Search">
-                        <span class="bx bx-search-alt"></span>
-                    </div>
-                </form>
-                <div class="dropdown d-inline-block d-lg-none ms-2">
-                    <button type="button" class="btn header-item noti-icon waves-effect" id="page-header-search-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class='bx bx-search-alt' ></i>
-                        </button>
-                    <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0" aria-labelledby="page-header-search-dropdown">
-    
-                        <form class="p-3">
-                            <div class="form-group m-0">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Search ...">
-                                    <div class="input-group-append">
-                                        <button class="btn btn-primary h-100" type="submit"><i class='bx bx-search-alt' ></i></button>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-    
-                <div class="dropdown d-inline-block">
-                    <button type="button" class="btn header-item" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="btn dropdown-toggle" id="header-lang-img">
-                                EN 
-                                <i class='bx bx-caret-down'></i>
-                            </span>
-                        </button>
-                    <div class="dropdown-menu dropdown-menu-end">
-    
-                        <!-- item-->
-                        <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="en">
-                            <img src="./images/flags/us.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle">English</span>
-                        </a>
-                        <!-- item-->
-                        <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="sp">
-                            <img src="./images/flags/spain.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle">Spanish</span>
-                        </a>
-    
-                        <!-- item-->
-                        <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="gr">
-                            <img src="./images/flags/germany.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle">German</span>
-                        </a>
-    
-                        <!-- item-->
-                        <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="it">
-                            <img src="./images/flags/italy.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle">Italian</span>
-                        </a>
-    
-                        <!-- item-->
-                        <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="ru">
-                            <img src="./images/flags/russia.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle">Russian</span>
-                        </a>
-                    </div>
-                </div>
-                <!-- <div class="dropdown d-none d-lg-inline-block ms-1">
-                    <button type="button" class="btn header-item noti-icon waves-effect" data-toggle="fullscreen">
-                            <i class="bx bx-fullscreen"></i>
-                        </button>
-                </div> -->
-                <div class="dropdown d-inline-block mt-12">
-                    <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img class="rounded-circle header-profile-user" src="./images/profile/profile.png"
-                                alt="Header Avatar">
-                            <span class="pulse-css"></span>
-                            <span class="info d-xl-inline-block  color-span">
-                                <span class="d-block fs-20 font-w600">Randy Riley</span>
-                                <span class="d-block mt-7" >randy.riley@gmail.com</span>
-                            </span>
-                                
-                            <i class='bx bx-chevron-down'></i>
-                        </button>
-                    <div class="dropdown-menu dropdown-menu-end">
-                        <!-- item-->
-                        <a class="dropdown-item" href="#"><i class="bx bx-user font-size-16 align-middle me-1"></i> <span>Profile</span></a>
-                        <a class="dropdown-item" href="#"><i class="bx bx-wallet font-size-16 align-middle me-1"></i> <span>My Wallet</span></a>
-                        <a class="dropdown-item d-block" href="#"><span class="badge bg-success float-end">11</span><i class="bx bx-wrench font-size-16 align-middle me-1"></i> <span>Settings</span></a>
-                        <a class="dropdown-item" href="#"><i class="bx bx-lock-open font-size-16 align-middle me-1"></i> <span>Lock screen</span></a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item text-danger" href="user-login.html"><i class="bx bx-power-off font-size-16 align-middle me-1 text-danger"></i> <span>Logout</span></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- End Main Header -->
+?>
 
     <!-- MAIN CONTENT -->
     <div class="main">
@@ -285,7 +53,17 @@
                             <div class="content color-10">
                                 <h5 class="title-box fs-17 font-w400 mb-1">Total Project</h5>
                                 <div class="themesflat-counter fs-18 font-wb">
-                                    <span class="number" data-from="0" data-to="1225" data-speed="2500" data-inviewport="yes">1225 +</span>
+                                    <span class="number" data-from="0" data-to="1225" data-speed="2500" data-inviewport="yes"><?php $sql4 = "SELECT * FROM `projects`";
+                                        $result4 = $conn->query($sql4);
+                                        $total = 0;
+                                        if ($result4->num_rows > 0) {
+                                            while ($row4 = $result4->fetch_assoc()) {
+                                                $total = $total + 1;
+                                            }
+                                            echo $total;
+
+                                        }
+                                        ?> +</span>
                                 </div>
                             </div>
                         </div>
@@ -360,6 +138,7 @@
                         </div>
 
                         <div class="panel-body tabs-menu-body hremp-tabs1 p-0">
+
                             <div class="tab-content">
                                 <div class="tab-pane active" id="tab5">
                                     <div class="box-body pl-15 pr-15 pb-20 pr-0">
@@ -1685,7 +1464,6 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
                     </div>
                 </div>
                 <div class="col-4 col-xl-12">
@@ -1693,11 +1471,11 @@
                         <div class="box-body">
                             <div class="user-pic text-center">
                                 <div class="avatar ">
-                                    <img src="./images/profile/client-1.png" alt="">
+                                    <img style=" width: 100px; border-radius: 10%;" src="./images/profile/<?php echo $logpicture;?>" alt="">
                                     <div class="pulse-css"></div>
                                 </div>
                                 <div class="pro-user mt-3">
-                                    <h5 class="pro-user-username text-dark mb-2 fs-15 mt-42 color-span">Helena Zahangir</h5>
+                                    <h5 class="pro-user-username text-dark mb-2 fs-15 mt-42 color-span"><?php echo $loguser; ?></h5>
                                     <h6 class="pro-user-desc text-muted fs-14">CEO</h6>
                                 </div>
                             </div>
@@ -1728,7 +1506,7 @@
                                         <tr>
                                             <td class="py-2 px-0"> <span class="w-50">Email ID</span> </td>
                                             <td>:</td>
-                                            <td class="py-2 px-0"> <span class="">Helena@info.com</span> </td>
+                                            <td class="py-2 px-0"> <span class="">foyez@prozzila.com</span> </td>
                                         </tr>
                                         <tr>
                                             <td class="py-2 px-0"> <span class="w-50">Contact no</span> </td>
@@ -1743,12 +1521,12 @@
                                         <tr>
                                             <td class="py-2 px-0"> <span class="w-50">Country</span> </td>
                                             <td>:</td>
-                                            <td class="py-2 px-0"> <span class="">Germany</span> </td>
+                                            <td class="py-2 px-0"> <span class="">Bangladesh</span> </td>
                                         </tr>
                                         <tr>
                                             <td class="py-2 px-0"> <span class="w-50">Address</span> </td>
                                             <td>:</td>
-                                            <td class="py-2 px-0"> <span class="">Leipziger Straße 60, GE</span> </td>
+                                            <td class="py-2 px-0"> <span class="">Dhanmondi, 10, Dhaka-1203</span> </td>
                                         </tr>
                                         <tr>
                                             <td class="py-2 px-0"> <span class="w-50">Status</span> </td>
@@ -1771,27 +1549,27 @@
                                         <tr>
                                             <td class="py-2 px-0"> <span class="w-50">Company Name </span> </td>
                                             <td>:</td>
-                                            <td class="py-2 px-0"> <span class="">ToTo Company</span> </td>
+                                            <td class="py-2 px-0"> <span class="">ProZZila Inc.</span> </td>
                                         </tr>
                                         <tr>
                                             <td class="py-2 px-0"> <span class="w-50">Country</span> </td>
                                             <td>:</td>
-                                            <td class="py-2 px-0"> <span class="">Germany</span> </td>
+                                            <td class="py-2 px-0"> <span class="">Bangladesh</span> </td>
                                         </tr>
                                         <tr>
                                             <td class="py-2 px-0"> <span class="w-50">Address</span> </td>
                                             <td>:</td>
-                                            <td class="py-2 px-0"> <span class="">Leipziger Straße 60, GE</span> </td>
+                                            <td class="py-2 px-0"> <span class="">Dhanmondi, 10, Dhaka-1203</span> </td>
                                         </tr>
                                         <tr>
                                             <td class="py-2 px-0"> <span class="w-50">Contact No</span> </td>
                                             <td>:</td>
-                                            <td class="py-2 px-0"> <span class="">+91 05697 2564 03</span> </td>
+                                            <td class="py-2 px-0"> <span class="">+880 1859 166002</span> </td>
                                         </tr>
                                         <tr>
                                             <td class="py-2 px-0"> <span class="w-50">Website</span> </td>
                                             <td>:</td>
-                                            <td class="py-2 px-0"> <span class="">www.totopany.com</span> </td>
+                                            <td class="py-2 px-0"> <span class="">www.prozzila.com</span> </td>
                                         </tr>
 
                                     </tbody>
@@ -1804,6 +1582,7 @@
 
 
         </div>
+    </div>
     </div>
     <!-- END MAIN CONTENT -->
 
