@@ -146,12 +146,6 @@ WHERE work_status = 'Completed';";
             <div class="">
                 <div class="box-header pt-0 pl-0 ms-0 mb-4 mt-4 border-bottom-0 responsive-header">
                     <h4 class="box-title fs-22">Recent Project Update</h4>
-                    <div class="card-options">
-                        <div class="btn-list d-flex">
-                            <a href="project_list.php" class="btn btn-light d-flex align-items-center mr-5"><i
-                                        class="fas fa-eye mr-5"></i>View All</a>
-                        </div>
-                    </div>
                 </div>
                 <div class="row">
                     <?php
@@ -166,51 +160,18 @@ WHERE work_status = 'Completed';";
                                     <div class="box-body">
                                         <div class="row">
                                             <div class="col-12 mb-10">
-                                                <div class="mt-0 text-start"><a href="project-details.php?data=<?php echo urlencode($row3["id"]); ?>"
-                                                                                class="box-title mb-0 mt-1 mb-3 font-w600 fs-18"><?php echo $row3["project_title"]; ?></a>
+                                                <div class="mt-0 text-start"><a
+                                                            href="project-details.php?data=<?php echo urlencode($row3["id"]); ?>"
+                                                            class="box-title mb-0 mt-1 mb-3 font-w600 fs-18"><?php echo $row3["project_title"]; ?></a>
                                                     <p class="fs-14 font-w500 text-muted mb-6"><?php echo $row3["department"]; ?></p>
                                                     <span class="fs-13  mt-2 text-muted"><?php echo $row3["description"]; ?></span>
                                                 </div>
-                                                <img src="./images/icon/experience.png" alt="img" class="img-box">
+                                                <img src="./images/icon/<?php echo $row3["department"]; ?>.svg"
+                                                     alt="img" class="img-box">
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="box-footer">
-                                        <div class="d-flex align-items-center">
-                                            <div class="d-flex mb-3 mb-md-0">
-                                                <div class="mr-10">
-                                                    <div class="chart-circle chart-circle-xs" data-value="0.75"
-                                                         data-thickness="3" data-color="#3C21F7">
-                                                        <canvas width="40" height="40"></canvas>
-                                                        <div class="chart-circle-value">75%</div>
-                                                    </div>
-                                                </div>
-                                                <ul class="user-list mb-0">
-                                                    <li><img src="./images/avatar/user-1.png" alt="user"></li>
-                                                    <li><img src="./images/avatar/user-2.png" alt="user"></li>
-                                                    <li><img src="./images/avatar/user-3.png" alt="user"></li>
-                                                </ul>
 
-                                            </div>
-                                            <div class="ms-auto mt-3 mt-sm-0">
-                                                <div class="d-flex">
-                                                    <div class="task-btn bg-danger-1 text-danger btn-link fs-14"
-                                                         data-bs-toggle="tooltip" data-bs-placement="top" title=""
-                                                         data-bs-original-title="Project Priority">High
-                                                    </div>
-                                                    <a class="btn btn-outline-light  text-muted pd-0 fs-34" href="#"
-                                                       data-bs-toggle="dropdown" aria-haspopup="true"
-                                                       aria-expanded="false"><i class='bx bx-dots-vertical-rounded'></i></a>
-                                                    <ul class="dropdown-menu " role="menu">
-                                                        <li><a href="#"><i class="far fa-eye"></i>View</a></li>
-                                                        <li><a href="#"><i class='bx bx-plus-circle'></i>Add</a></li>
-                                                        <li><a href="#"><i class='bx bx-trash'></i>Remove</a></li>
-                                                        <li><a href="#"><i class='bx bx-cog'></i>More</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                             <?php
@@ -224,277 +185,12 @@ WHERE work_status = 'Completed';";
         </div>
 
         <div class="row">
-            <div class="col-6 col-md-12">
-                <!-- CUSTOMERS CHART -->
-                <div class="box f-height">
-                    <div class="box-header d-flex justify-content-between">
-                        <h3 class="mt-9 fs-22">Project Statistics</h3>
-                        <ul class="card-list mb-0">
-                            <li class="custom-label"><span></span>Complete</li>
-                            <li class="custom-label"><span></span>Progress</li>
-                        </ul>
-                    </div>
-                    <div class="box-body pt-20">
-                        <div id="customer-chart"></div>
-                    </div>
-                </div>
-                <!-- END CUSTOMERS CHART -->
-            </div>
-            <div class="col-6 col-md-12">
-                <div class="box">
-                    <div class="box-header">
-                        <div class="me-auto">
-                            <h4 class="card-title fs-22">Employee Category</h4>
-                            <p class="fs-14 mt-4">Lorem ipsum dolor sit amet</p>
-                        </div>
-                    </div>
-                    <div class="box-body pt-0">
-                        <div class="row">
-                            <div class="col-6 col-xl-12 col-md-6 col-sm-12 w-sm-100 mb-0">
-                                <ul class="box-list mt-25 pr-60">
-                                    <li><span class="bg-blue square"></span>Web Design<span>25%</span></li>
-                                    <li><span class="bg-success square"></span>UX/UI Design<span>18%</span></li>
-                                    <li><span class="bg-warning square"></span>Graphics Design<span>17%</span></li>
-                                    <li><span class="bg-blue square"></span>Motion Design<span>12.50%</span></li>
-                                    <li><span class="bg-success square"></span>Brand Identity<span>12.50%</span></li>
-                                    <li><span class="bg-warning square"></span>Others<span>12.50%</span></li>
-                                </ul>
-                            </div>
-                            <div class="col-6 col-xl-12 col-md-6 col-sm-12 w-sm-100 mb-23">
-                                <!-- <canvas id="doughnut-chart" width="240" height="240"></canvas> -->
-                                <div class="canvas-container" style=" margin: -289px auto;">
-                                    <canvas id="chartjs-4" class="chartjs" width="100" height="100"></canvas>
-                                    <div class="chart-data">
-                                        <div data-percent="25" data-color="#3C21F7" data-label="Web Design"></div>
-                                        <div data-percent="18" data-color="#00BC8B" data-label="UX/UI Design"></div>
-                                        <div data-percent="17" data-color="#FFB800" data-label="Graphics Design"></div>
-                                        <div data-percent="12.5" data-color="#00ECCC" data-label="Motion Design"></div>
-                                        <div data-percent="12.5" data-color="#EF7F5A" data-label="Brand Identity"></div>
-                                        <div data-percent="12.5" data-color="#5D45FB" data-label="Others"></div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-6 col-md-12">
-                <div class="box">
-                    <div class="box-header  pt-0 align-items-start">
-                        <div class="me-auto">
-                            <h4 class="card-title mb-0 fs-22">Recent Task Activity</h4>
-                            <p class="mt-6 fs-14 mb-14">September 4, 2021</p>
-                        </div>
-                        <div class="card-options pr-3">
-                            <div class="dropdown"><a href="#" class="btn ripple btn-outline-light dropdown-toggle fs-12"
-                                                     data-bs-toggle="dropdown" aria-expanded="false"> Select Date <i
-                                            class="feather feather-chevron-down"></i> </a>
-                                <ul class="dropdown-menu dropdown-menu-end" role="menu" style="">
-                                    <li><a href="#">Monthly</a></li>
-                                    <li><a href="#">Yearly</a></li>
-                                    <li><a href="#">Weekly</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="box-body pb-0">
-                        <ul class="message mb-2">
-                            <li class="dlab-chat-user">
-                                <div class="d-flex bd-highlight">
-                                    <div class="img_cont">
-                                        <img src="./images/avatar/message-01.png" class="rounded-circle user_img"
-                                             alt=""/>
-                                    </div>
-                                    <div class="user_info">
-                                        <a class="fs-15 font-w500 mt-5 mb-5" href="message.php">Lucinda Massey</a>
-                                        <p class="fs-13 mb-0">2 Hour ago</p>
-                                    </div>
-                                </div>
-                                <div class="card-options me-0 d-flex align-items-center">
-                                    <a href="#" class="text-primary fs-14">Add New Task</a>
-                                </div>
-                            </li>
-                            <li class="dlab-chat-user">
-                                <div class="d-flex bd-highlight">
-                                    <div class="img_cont border-pink">
-                                        <img src="./images/avatar/message-02.png" class="rounded-circle user_img"
-                                             alt=""/>
-                                    </div>
-                                    <div class="user_info">
-                                        <a class="fs-15 font-w500 mt-5 mb-5" href="message.php">Ryan Nolan</a>
-                                        <p class="fs-13 mb-0">25 Min ago</p>
-                                    </div>
-                                </div>
-                                <div class="card-options me-0 d-flex align-items-center">
-                                    <a href="#" class="text-success fs-14">Review Completed</a>
-                                </div>
-                            </li>
-                            <li class="dlab-chat-user">
-                                <div class="d-flex bd-highlight">
-                                    <div class="img_cont border-green">
-                                        <img src="./images/avatar/message-03.png" class="rounded-circle user_img"
-                                             alt=""/>
-                                    </div>
-                                    <div class="user_info">
-                                        <a class="fs-15 font-w500 mt-5 mb-5" href="message.php">Lucinda Massey</a>
-                                        <p class="fs-13 mb-0">2 Hour ago</p>
-                                    </div>
-                                </div>
-                                <div class="card-options me-0 d-flex align-items-center">
-                                    <a href="#" class="text-completed fs-14">Task Completed</a>
-                                </div>
-                            </li>
-
-                            <li class="dlab-chat-user">
-                                <div class="d-flex bd-highlight">
-                                    <div class="img_cont border-pink">
-                                        <img src="./images/avatar/message-02.png" class="rounded-circle user_img"
-                                             alt=""/>
-                                    </div>
-                                    <div class="user_info">
-                                        <a class="fs-15 font-w500 mt-5 mb-5" href="message.php">Ryan Nolan</a>
-                                        <p class="fs-13 mb-0">25 Min ago</p>
-                                    </div>
-                                </div>
-                                <div class="card-options me-0 d-flex align-items-center">
-                                    <a href="#" class="text-success fs-14">Review Completed</a>
-                                </div>
-                            </li>
-                            <li class="dlab-chat-user">
-                                <div class="d-flex bd-highlight">
-                                    <div class="img_cont">
-                                        <img src="./images/avatar/message-01.png" class="rounded-circle user_img"
-                                             alt=""/>
-                                    </div>
-                                    <div class="user_info">
-                                        <a class="fs-15 font-w500 mt-5 mb-5" href="message.php">Lucinda Massey</a>
-                                        <p class="fs-13 mb-0">2 Hour ago</p>
-                                    </div>
-                                </div>
-                                <div class="card-options me-0 d-flex align-items-center">
-                                    <a href="#" class="text-primary fs-14">Add New Task</a>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-6 col-md-12">
-                <div class="box">
-                    <div class="box-header  pt-0">
-                        <div class="me-auto">
-                            <h4 class="card-title mb-0 fs-22">In Progress Project</h4>
-
-                        </div>
-                        <div class="card-options pr-3">
-                            <div class="dropdown"><a href="#" class="btn ripple btn-outline-light dropdown-toggle fs-12"
-                                                     data-bs-toggle="dropdown" aria-expanded="false"> See All <i
-                                            class="feather feather-chevron-down"></i> </a>
-                                <ul class="dropdown-menu dropdown-menu-end" role="menu" style="">
-                                    <li><a href="#">Monthly</a></li>
-                                    <li><a href="#">Yearly</a></li>
-                                    <li><a href="#">Weekly</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="box-body pb-0">
-                        <div class="project-progress-content mt-21 mb-26">
-                            <div class="list-group-item d-sm-flex  align-items-center border-0 pd-0">
-                                <div class="d-flex w-10">
-                                    <div class="task-img bg-primary-transparent"><img src="./images/icon/html-2.png"
-                                                                                      alt="img" class=""></div>
-
-                                </div>
-                                <div class="w-90 mt-4 mt-md-0 pl-13">
-                                    <p class="fs-16 font-w500 ms-auto mb-13">Software Architecture Design</p>
-                                    <div class="progress progress-sm w-100">
-                                        <div class="progress-bar bg-green-1 w-90"></div>
-                                    </div>
-                                    <div class="d-flex justify-content-between mt-17">
-                                        <div class="deadline fs-14 font-w500 me-auto d-flex align-items-center"><i
-                                                    class='bx bxs-time-five fs-20 mr-9'></i>Deadline : in 3 days
-                                        </div>
-                                        <ul class="user-list mb-0">
-                                            <li><img src="./images/avatar/user-1.png" alt="user"></li>
-                                            <li><img src="./images/avatar/user-2.png" alt="user"></li>
-                                            <li><img src="./images/avatar/user-3.png" alt="user"></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="project-progress-content mt-0 mb-26">
-                            <div class="list-group-item d-sm-flex  align-items-center border-0 pd-0">
-                                <div class="d-flex w-10">
-                                    <div class="task-img bg-primary-transparent"><img src="./images/icon/html-2.png"
-                                                                                      alt="img" class=""></div>
-
-                                </div>
-                                <div class="w-90 mt-4 mt-md-0 pl-13">
-                                    <p class="fs-16 font-w500 ms-auto mb-13">Web Development</p>
-                                    <div class="progress progress-sm w-100">
-                                        <div class="progress-bar bg-primary-1 w-90"></div>
-                                    </div>
-                                    <div class="d-flex justify-content-between mt-17">
-                                        <div class="deadline fs-14 font-w500 me-auto d-flex align-items-center"><i
-                                                    class='bx bxs-time-five fs-20 mr-9'></i>Deadline : in 3 days
-                                        </div>
-                                        <ul class="user-list mb-0">
-                                            <li><img src="./images/avatar/user-1.png" alt="user"></li>
-                                            <li><img src="./images/avatar/user-2.png" alt="user"></li>
-                                            <li><img src="./images/avatar/user-3.png" alt="user"></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="project-progress-content mt-0">
-                            <div class="list-group-item d-sm-flex  align-items-center border-0 pd-0">
-                                <div class="d-flex w-10">
-                                    <div class="task-img bg-primary-transparent"><img src="./images/icon/html-2.png"
-                                                                                      alt="img" class=""></div>
-
-                                </div>
-                                <div class="w-90 mt-4 mt-md-0 pl-13">
-                                    <p class="fs-16 font-w500 ms-auto mb-13">Mobile App Development</p>
-                                    <div class="progress progress-sm w-100">
-                                        <div class="progress-bar bg-danger w-90"></div>
-                                    </div>
-                                    <div class="d-flex justify-content-between mt-17">
-                                        <div class="deadline fs-14 font-w500 me-auto d-flex align-items-center"><i
-                                                    class='bx bxs-time-five fs-20 mr-9'></i>Deadline : in 3 days
-                                        </div>
-                                        <ul class="user-list mb-0">
-                                            <li><img src="./images/avatar/user-1.png" alt="user"></li>
-                                            <li><img src="./images/avatar/user-2.png" alt="user"></li>
-                                            <li><img src="./images/avatar/user-3.png" alt="user"></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <div class="col-12 col-md-12">
                 <div class="box ">
-                    <div class="box-header  pt-0">
-                        <div class="me-auto">
-                            <h4 class="card-title mb-0 fs-22">Recent Project Activity</h4>
-
-                        </div>
-                        <div class="card-options pr-3">
-                            <div class="dropdown"><a href="#" class="btn ripple btn-outline-light dropdown-toggle fs-14"
-                                                     data-bs-toggle="dropdown" aria-expanded="false"> See All <i
-                                            class="feather feather-chevron-down"></i> </a>
-                                <ul class="dropdown-menu dropdown-menu-end" role="menu" style="">
-                                    <li><a href="#">Monthly</a></li>
-                                    <li><a href="#">Yearly</a></li>
-                                    <li><a href="#">Weekly</a></li>
-                                </ul>
-                            </div>
+                    <div class="box project">
+                        <div class="box-header">
+                            <h4 class="box-title">Complete list:</h4>
+                            <a class="btn btn-success" href="project_list.php"></i>View All</a>
                         </div>
                     </div>
                     <div class="row">
@@ -798,7 +494,9 @@ WHERE work_status = 'Completed';";
 
 <!-- SCRIPT -->
 <!-- APEX CHART -->
-
+<?php
+include 'copyright.php';
+?>
 <script src="./libs/jquery/jquery.min.js"></script>
 <script src="./libs/jquery/jquery-ui.min.js"></script>
 <script src="./libs/moment/min/moment.min.js"></script>
