@@ -29,7 +29,7 @@ $result = $conn->query($sql);
     <link rel="stylesheet" href="./css/responsive.css">
 </head>
 <?php
-$pagetitle = "Client List";
+$pagetitle = "Clients";
 include 'header.php';
 
 ?>
@@ -41,24 +41,12 @@ include 'header.php';
 
             <div class="row">
                 <div class="col-12">
-                    <div class="box">
-                        <div class="box-body d-flex justify-content-between pt-0 pb-0">
-                            <div class="search-form d-flex">
-                                <input type="text" placeholder="Client Name" class="form-control">
-                                <select class="form-control" id="inputState">
-                                    <option selected>Select Company Name</option>
-                                    <option>Company 1 </option>
-                                    <option>Company 2</option>
-                                </select>
-                                <button type="submit" class="search d-flex"><i class="fas fa-search"></i>Search</button>
-                            </div>
-                            <div class="list-action">
-                                <a class="list" href="#" onclick="liststyle()"><i class='bx bx-menu' ></i></a>
-                                <a href="#" class="list-board active" onclick="listboard()"><i class='bx bxs-dashboard' ></i></a>
-                                <a href="new-client.php" class="add">Add Client<i class="fas fa-plus-circle"></i></a>
-                            </div>
+                    <div class="box project">
+                        <div class="box-header">
+                            <h4 class="box-title">Complete list:</h4>
+                            <a class="btn btn-primary" href="new-client.php"><i class="fas fa-plus mr-5"></i>Add
+                            </a>
                         </div>
-
                     </div>
                 </div>
 

@@ -27,7 +27,7 @@ include 'header.php';
 
                                 <div class="col-md-6 col-sm-12 mb-24">
                                     <div class="form-group"><label class="form-label">Client ID</label> <input required
-                                                                                                                type="number"
+                                                                                                                type="text"
                                                                                                                 name="client_id"
                                                                                                                 class="form-control"
                                                                                                                 placeholder="2569852">
