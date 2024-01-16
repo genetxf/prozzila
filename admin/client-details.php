@@ -1471,12 +1471,12 @@ include 'header.php';
                         <div class="box-body">
                             <div class="user-pic text-center">
                                 <div class="avatar ">
-                                    <img style=" width: 100px; border-radius: 10%;" src="./images/profile/devtech-featured-post-ptayhk28pxmgyom40l19qsx1n0ft56e0h566yd62nw" alt="">
+                                    <img style=" width: 100px; border-radius: 10%;" src="images/profile/devtech2.jpg" alt="">
                                     <div class="pulse-css"></div>
                                 </div>
                                 <div class="pro-user mt-3">
                                     <h5 class="pro-user-username text-dark mb-2 fs-15 mt-42 color-span">Test Client</h5>
-                                    <h6 class="pro-user-desc text-muted fs-14">CEO</h6>
+                                    <h6 class="pro-user-desc text-muted fs-14">Tech Company</h6>
                                 </div>
                             </div>
                         </div>

@@ -9,7 +9,7 @@
                     <div class="col-12">
                         <div class="box">
                             <div class="box-header d-flex justify-content-between">
-                                <a href="index.php">
+                                <a href="../index.php">
                                     <img class="logosvg" src="./images/logo.svg" alt="">
                                 </a>
 
@@ -33,11 +33,6 @@
                                             <div class="d-flex align-items-start">
                                                 <div class="flex-grow-1">
                                                     <label class="form-label mb-14">Password</label>
-                                                </div>
-                                                <div class="flex-shrink-0">
-                                                    <div class="">
-                                                        <a href="#" class="text-muted">Forgot password?</a>
-                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="input-group auth-pass-inputgroup">
@@ -68,13 +63,6 @@
                                     </form>
 
 
-                                    <div class="mt-20 pt-2 text-center">
-                                        <div class="signin-other-title">
-                                            <a href="#" class="text-muted fs-14">Forgot password?</a>
-                                        </div>
-
-                                    </div>
-
                                     <div class="mt-37 text-center">
                                         <p class="text-muted mb-0 fs-14">Don't have an account ? <a
                                                     href="registration.php" class="text-primary fw-semibold"> Create
@@ -101,7 +89,7 @@
                                             </li>
                                             <li class="list-inline-item">
                                                 <a href="javascript:void()" class="social-list-item  text-white">
-                                                    <i class='bx bxl-google-plus'></i>
+                                                    <i class='bx bxs-envelope'></i>
                                                 </a>
                                             </li>
                                         </ul>
@@ -131,4 +119,29 @@
             }
         });
     </script>
-<?php include 'footer.php'; ?>
+<!-- SCRIPT -->
+<!-- APEX CHART -->
+
+<script src="./libs/jquery/jquery.min.js"></script>
+<script src="./libs/jquery/jquery-ui.min.js"></script>
+<script src="./libs/moment/min/moment.min.js"></script>
+<script src="./libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="./libs/peity/jquery.peity.min.js"></script>
+<script src="./libs/chart.js/Chart.bundle.min.js"></script>
+<script src="./libs/owl.carousel/owl.carousel.min.js"></script>
+<script src="./libs/bootstrap/js/bootstrap.min.js"></script>
+<script src="./js/countto.js"></script>
+<script src="./libs/date-picker/datepicker.js"></script>
+<script src="./libs/simplebar/simplebar.min.js"></script>
+
+
+<!-- APP JS -->
+<script src="./js/main.js"></script>
+<script src="./js/shortcode.js"></script>
+<script src="./js/pages/datepicker.js"></script>
+
+<script>
+</script>
+</body>
+
+</html>

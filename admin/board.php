@@ -282,33 +282,6 @@ include 'header.php';
                                                                     <br>
                                                                 <?php endwhile; ?>
 
-                                                                <!-- Shared With Section -->
-                                                                <div class="divider d-flex align-items-center my-4"></div>
-                                                                <p class="text-center mx-3 mb-0 text-muted">Shared with</p>
-                                                                <div class="divider d-flex align-items-center my-4"></div>
-
-                                                                <ul class="list-group rounded-0 list-group-horizontal justify-content-center pb-2">
-                                                                <li class="list-group-item border-0 d-flex align-items-center p-0">
-                                                                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-8.webp"
-                                                                         alt="avatar" class="rounded-circle me-n2"
-                                                                         width="45">
-                                                                </li>
-                                                                <li class="list-group-item border-0 d-flex align-items-center p-0">
-                                                                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-3.webp"
-                                                                         alt="avatar" class="rounded-circle me-n2"
-                                                                         width="45">
-                                                                </li>
-                                                                <li class="list-group-item border-0 d-flex align-items-center p-0">
-                                                                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-5.webp"
-                                                                         alt="avatar" class="rounded-circle me-n2"
-                                                                         width="45">
-                                                                </li>
-                                                                <li class="list-group-item border-0 d-flex align-items-center p-0">
-                                                                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-6.webp"
-                                                                         alt="avatar" class="rounded-circle me-n2"
-                                                                         width="45">
-                                                                </li>
-                                                                </ul>
 
                                                                 <div class="divider d-flex align-items-center my-4"></div>
 

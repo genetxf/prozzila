@@ -13,7 +13,7 @@
                                     <img class="d-block mx-auto mb-4" src="images/logo.svg" alt="" width="100%" height="100%">
                                     <h2>Weelcome To Prozzila</h2><p style="
 ">
-                                        <a href="user/" class="btn btn-primary my-2">Employee</a>
+                                        <a href="user/" class="btn btn-secondary my-2">Employee</a>
                                         <a href="admin" class="btn btn-secondary my-2">Admin</a>
                                     </p>
 

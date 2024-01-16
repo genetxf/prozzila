@@ -8,7 +8,7 @@
                     <div class="col-12">
                         <div class="box">
                             <div class="box-header d-flex justify-content-between">
-                                <a href="index.php">
+                                <a href="../index.php">
                                     <img src="./images/logo.svg" alt="">
                                 </a>
                                 
@@ -32,11 +32,6 @@
                                                 <div class="flex-grow-1">
                                                     <label class="form-label mb-14">Password</label>
                                                 </div>
-                                                <div class="flex-shrink-0">
-                                                    <div class="">
-                                                        <a href="#" class="text-muted">Forgot password?</a>
-                                                    </div>
-                                                </div>
                                             </div>
     
                                             <div class="input-group auth-pass-inputgroup">
@@ -59,13 +54,7 @@
                                             <button class="btn bg-primary color-white w-100 waves-effect waves-light fs-18 font-w500" type="submit">Sign in</button>
                                         </div>
                                     </form>
-    
-                                    <div class="mt-20 pt-2 text-center">
-                                        <div class="signin-other-title">
-                                            <a href="#" class="text-muted fs-14">Forgot password?</a>
-                                        </div>
-    
-                                    </div>
+
     
                                     <div class="mt-37 text-center">
                                         <p class="text-muted mb-0 fs-14">Don't have an account ? <a href="registration.php" class="text-primary fw-semibold">  Create Account </a> </p>

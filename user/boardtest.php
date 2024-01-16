@@ -153,7 +153,7 @@ include 'header.php';
                                             <div class="divider d-flex align-items-center my-3"></div>
 
                                             <div class="d-flex justify-content-between">
-
+                                                
                                                 <button
                                                    class="btn btn-success" data-toggle="modal"
                                                    data-target="#view_card_modal<?= $cardid ?>" style="">View</button>
@@ -276,6 +276,33 @@ include 'header.php';
                                                                     <br>
                                                                 <?php endwhile; ?>
 
+                                                                <!-- Shared With Section -->
+                                                                <div class="divider d-flex align-items-center my-4"></div>
+                                                                <p class="text-center mx-3 mb-0 text-muted">Shared with</p>
+                                                                <div class="divider d-flex align-items-center my-4"></div>
+
+                                                                <ul class="list-group rounded-0 list-group-horizontal justify-content-center pb-2">
+                                                                <li class="list-group-item border-0 d-flex align-items-center p-0">
+                                                                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-8.webp"
+                                                                         alt="avatar" class="rounded-circle me-n2"
+                                                                         width="45">
+                                                                </li>
+                                                                <li class="list-group-item border-0 d-flex align-items-center p-0">
+                                                                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-3.webp"
+                                                                         alt="avatar" class="rounded-circle me-n2"
+                                                                         width="45">
+                                                                </li>
+                                                                <li class="list-group-item border-0 d-flex align-items-center p-0">
+                                                                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-5.webp"
+                                                                         alt="avatar" class="rounded-circle me-n2"
+                                                                         width="45">
+                                                                </li>
+                                                                <li class="list-group-item border-0 d-flex align-items-center p-0">
+                                                                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-6.webp"
+                                                                         alt="avatar" class="rounded-circle me-n2"
+                                                                         width="45">
+                                                                </li>
+                                                                </ul>
 
                                                                 <div class="divider d-flex align-items-center my-4"></div>
 
@@ -347,8 +374,7 @@ include 'header.php';
                                                     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
                                                     xhr.onreadystatechange = function () {
                                                         if (xhr.readyState === 4 && xhr.status === 200) {
-                                                            var successMessage = xhr.responseText;
-                                                            showBootstrapWarning(successMessage);
+                                                            // Handle the response if needed
                                                             console.log(xhr.responseText);
                                                         }
                                                     };
@@ -356,30 +382,12 @@ include 'header.php';
                                                 }
                                             });
                                         });
-
-                                    function showBootstrapWarning(successMessage) {
-                                        // Create a new div element for the Bootstrap warning
-                                        var alertContainer = document.createElement('div');
-                                        alertContainer.className = 'alert alert-warning alert-dismissible fade show';
-                                        alertContainer.setAttribute('role', 'alert');
-
-                                        // Add close button
-                                        alertContainer.innerHTML = '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
-
-                                        // Add success message
-                                        alertContainer.innerHTML += successMessage;
-
-                                        // Append the alert to the document body
-                                        document.body.appendChild(alertContainer);
-
-                                        // Optional: Remove the alert after a delay
-                                        setTimeout(function () {
-                                            document.body.removeChild(alertContainer);
-                                        }, 5000); // Adjust the delay (in milliseconds) as needed
-                                    }
                                     });
                                 </script>
-
+                            <div class="btn-add-card">
+                                <a class="dropdown-item font-w500 fs-16" href="#" data-toggle="modal"
+                                   data-target="#add_card_modal"><i class="fas fa-plus mr-14"></i>Add a card</a>
+                            </div>
                         </div>
 
                         <div class="kanban-list kanban-progress">
@@ -462,7 +470,10 @@ include 'header.php';
                                     </div>
                                 </div>
                             </div>
-
+                            <div class="btn-add-card">
+                                <a class="dropdown-item font-w500 fs-16" href="#" data-toggle="modal"
+                                   data-target="#add_card_modal"><i class="fas fa-plus mr-14"></i>Add a card</a>
+                            </div>
                         </div>
                         <div class="kanban-list kanban-review">
                             <div class="kanban-header">
@@ -507,7 +518,10 @@ include 'header.php';
                                     </div>
                                 </div>
                             </div>
-
+                            <div class="btn-add-card">
+                                <a class="dropdown-item font-w500 fs-16" href="#" data-toggle="modal"
+                                   data-target="#add_card_modal"><i class="fas fa-plus mr-14"></i>Add a card</a>
+                            </div>
                         </div>
                         <div class="kanban-list kanban-approved">
                             <div class="kanban-header">
@@ -552,7 +566,10 @@ include 'header.php';
                                     </div>
                                 </div>
                             </div>
-
+                            <div class="btn-add-card">
+                                <a class="dropdown-item font-w500 fs-16" href="#" data-toggle="modal"
+                                   data-target="#add_card_modal"><i class="fas fa-plus mr-14"></i>Add a card</a>
+                            </div>
                         </div>
 
                     </div>

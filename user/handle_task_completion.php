@@ -20,6 +20,8 @@ if (isset($_POST['user_id'], $_POST['card_id'], $_POST['task_id'])) {
 
         if ($conn->query($updateAssignmentSql) === TRUE) {
             echo "Assignment status updated successfully.";
+            $success ="Assignment status updated successfully.". "<br>";
+            include 'success.php';
             // Check if the status is 'Complete' in the completed_tasks table
             $checkCompleteStatusSql = "SELECT * FROM `assignment` WHERE `task_id` = $taskId AND `status` = 'Complete'";
             $resultCompleteStatus = $conn->query($checkCompleteStatusSql);
@@ -38,7 +40,8 @@ if (isset($_POST['user_id'], $_POST['card_id'], $_POST['task_id'])) {
                     $deleteFromCompletedTasksSql = "DELETE FROM `completed_tasks` WHERE `task_id` = $taskId AND `user_id` = '$employeeId'";
 
                     if ($conn->query($deleteFromCompletedTasksSql) === TRUE) {
-                        echo "Data deleted from completed_tasks table successfully." . "<br>";
+                        $success ="Data deleted from completed_tasks table successfully.". "<br>";
+                        include 'success.php';
                     } else {
                         echo "Error deleting data from completed_tasks: " . $deleteFromCompletedTasksSql . "<br>" . $conn->error;
                     }
@@ -48,9 +51,19 @@ if (isset($_POST['user_id'], $_POST['card_id'], $_POST['task_id'])) {
 
                     if ($conn->query($deleteFromAssignmentSql) === TRUE) {
                         echo "Data deleted from assignment table successfully." . "<br>";
+
+                        // Update card_id to NULL in the task table
+                        $updateTaskSql = "UPDATE `tasks` SET `card_id` = NULL WHERE `id` = $taskId";
+
+                        if ($conn->query($updateTaskSql) === TRUE) {
+                            echo "Card_id set to NULL in the task table successfully." . "<br>";
+                        } else {
+                            echo "Error updating card_id to NULL in the task table: " . $updateTaskSql . "<br>" . $conn->error;
+                        }
                     } else {
                         echo "Error deleting data from assignment: " . $deleteFromAssignmentSql . "<br>" . $conn->error;
                     }
+
                     // Delete data from assignment table where status is 'Complete' and employee_id and task_id match
                     $deleteFromAssignmentSql = "DELETE FROM `tasks` WHERE `task_id` = $taskId AND `card_id` = $cardId AND `status` = 'Complete'";
 
