@@ -19,6 +19,11 @@ if  (isset($_POST['submit']))  {
     $client_id = mysqli_real_escape_string($conn, $_POST["client_id"]);
     $name = mysqli_real_escape_string($conn, $_POST["name"]);
     $email = mysqli_real_escape_string($conn, $_POST["email"]);
+    // Retrieve the password from the POST request
+    $password = $_POST['password'];
+
+    // password using SHA-256
+    $shPassword = hash('sha256', $password);
     $contact_no = mysqli_real_escape_string($conn, $_POST["contact_no"]);
     $country = mysqli_real_escape_string($conn, $_POST["country"]);
     $address = mysqli_real_escape_string($conn, $_POST["address"]);
@@ -31,8 +36,8 @@ if  (isset($_POST['submit']))  {
 
 
 // Retrieve and sanitize other form fields as needed...
-    $sql = "INSERT INTO `client`(`client_id`, `name`, `email_id`, `contact_no`, `country`, `address`, `status`, `website`, `about`, `image`)
-            VALUES ('$client_id','$name', '$email', '$contact_no', '$country', '$address', '$status', '$website', '$about', '$attachment')";
+    $sql = "INSERT INTO `client`(`client_id`, `name`, `email_id`, `password`, `contact_no`, `country`, `address`, `status`, `website`, `about`, `image`)
+            VALUES ('$client_id','$name', '$email', '$shPassword','$contact_no', '$country', '$address', '$status', '$website', '$about', '$attachment')";
 
 //Upload Images
     $targetDirectory = "images/profile/"; // Change this to your desired upload directory

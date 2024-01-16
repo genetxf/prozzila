@@ -43,6 +43,14 @@ include 'header.php';
                                     </div>
                                 </div>
                                 <div class="col-md-6 col-sm-12 mb-24">
+                                    <div class="form-group"><label class="form-label">Password</label> <input required
+                                                                                                           type="password"
+                                                                                                           name="password"
+                                                                                                           class="form-control"
+                                                                                                           placeholder="**********">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-12 mb-24">
                                     <div class="form-group"><label class="form-label">Contact No</label> <input required
                                                                                                                 type="text"
                                                                                                                 name="contact_no"
@@ -50,23 +58,12 @@ include 'header.php';
                                                                                                                 placeholder="Enter Contact No">
                                     </div>
                                 </div>
-
-                            </div>
-                            <div class="row">
                                 <div class="col-md-6 col-sm-12 mb-24">
                                     <div class="form-group"><label class="form-label">Country</label> <input required
-                                                                                                               type="text"
-                                                                                                               name="country"
-                                                                                                               class="form-control"
-                                                                                                               placeholder="Enter Country">
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-sm-12 mb-24">
-                                    <div class="form-group"><label class="form-label">Address</label> <input required
                                                                                                              type="text"
-                                                                                                             name="address"
+                                                                                                             name="country"
                                                                                                              class="form-control"
-                                                                                                             placeholder="Enter Address">
+                                                                                                             placeholder="Enter Country">
                                     </div>
                                 </div>
                             </div>
@@ -106,6 +103,14 @@ include 'header.php';
                                     <div class="form-group">
                                         <label class="form-label">Website</label>
                                         <input required type="text" name="website" class="form-control" placeholder="Company Website">
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-sm-12 mb-24 form-group">
+                                    <div class="form-group"><label class="form-label">Address</label> <input required
+                                                                                                             type="text"
+                                                                                                             name="address"
+                                                                                                             class="form-control"
+                                                                                                             placeholder="Enter Address">
                                     </div>
                                 </div>
 
