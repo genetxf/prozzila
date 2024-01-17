@@ -189,7 +189,7 @@ WHERE work_status = 'Completed';";
                 <div class="box ">
                     <div class="box project">
                         <div class="box-header">
-                            <h4 class="box-title">Complete list:</h4>
+                            <h4 class="box-title">Recent Project List</h4>
                             <a class="btn btn-success" href="project_list.php"></i>View All</a>
                         </div>
                     </div>
