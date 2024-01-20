@@ -14,8 +14,8 @@
                                 </a>
 
                                 <div class="action-reg">
-                                    <h4 class="fs-30">Login</h4>
-                                    <a href="userlogin.php">Sign in to your account</a>
+                                    <h4 class="fs-30">Admin Login</h4>
+                                    <p style="float: right">Sign in to your account</p>
                                 </div>
 
                             </div>
@@ -25,9 +25,9 @@
 
                                     <form class="mt-5 pt-2" action="signin.php" method="POST">
                                         <div class="mb-24">
-                                            <label class="form-label mb-14">Mail or User Name</label>
+                                            <label class="form-label mb-14">Username</label>
                                             <input type="text" class="form-control" id="username" name="username"
-                                                   placeholder="Your text">
+                                                   placeholder="Type your username">
                                         </div>
                                         <div class="mb-16">
                                             <div class="d-flex align-items-start">
@@ -42,17 +42,6 @@
                                                 <button class="btn shadow-none ms-0" type="button"
                                                         id="togglePassword"><i class="far fa-eye-slash"></i>
                                                 </button>
-                                            </div>
-                                        </div>
-                                        <div class="row mb-29">
-                                            <div class="col">
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" id="remember-check"
-                                                           name="remember">
-                                                    <label class="form-check-label fs-14" for="remember-check">
-                                                        Remember me
-                                                    </label>
-                                                </div>
                                             </div>
                                         </div>
                                         <div class="mb-3">
