@@ -1,6 +1,6 @@
 <?php
-include 'auth.php';
-include 'database.php';
+    include 'auth.php';
+    include 'database.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,8 +28,8 @@ include 'database.php';
     <link rel="stylesheet" href="./css/responsive.css">
 </head>
 <?php
-$pagetitle = "Task";
-include 'header.php';
+    $pagetitle = "Task";
+    include 'header.php';
 
 ?>
 <!-- MAIN CONTENT -->
@@ -53,30 +53,48 @@ include 'header.php';
                     </div>
                     <!--Add New Task-->
                     <?php
-                    // Include your database connection file
+                        // Include your database connection file
 
-                    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                        // Process form data
-                        $task_name = $_POST['task_name'];
-                        $description = $_POST['description'];
-                        $priority = $_POST['priority'];
-                        $start_date = $_POST['start_date'];
-                        $due_date = $_POST['due_date'];
+                        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                            // Process form data
+                            $task_name = $_POST['task_name'];
+                            $project_name = $_POST['project_name'];
+                            $description = $_POST['description'];
+                            $priority = $_POST['priority'];
+                            $start_date = $_POST['start_date'];
+                            $due_date = $_POST['due_date'];
 
-                        // Insert data into the 'tasks' table
-                        $sql = "INSERT INTO tasks (task_name, description, priority, start_date, due_date) 
-            VALUES ('$task_name', '$description', '$priority', '$start_date', '$due_date')";
+                            // Insert data into the 'tasks' table
+                            if (empty($task_name) || empty($project_name)) {
+                                $error = "Error: Task and attachment cannot be empty.";
+                                include 'alert.php';
+                            } else {
+                                $sql = "INSERT INTO tasks (task_name, project_name, description, priority, start_date, due_date) 
+                                            VALUES ('$task_name', '$project_name', '$description', '$priority', '$start_date', '$due_date')";
 
-                        if ($conn->query($sql) === TRUE) {
-                            $success ="'$task_name' Added Successfully!";
-                            include 'success.php';
-                        } else {
-                            include 'alert.php';
+
+                                if ($conn->query($sql) === TRUE) {
+                                    // Now update the work_status in the projects table
+                                    $updateSql = "UPDATE projects SET work_status = 'Pending' WHERE project_name = '$project_name'";
+
+                                    if ($conn->query($updateSql) === TRUE) {
+                                        // Work_status updated successfully
+                                        $success1 = " Project Status Update Successfully!";
+                                    } else {
+                                        // Error updating work_status
+                                        $success1 = " Project Status Cant Updated!!!";
+                                    }
+                                    $success = " '$success1' and '$task_name' Added Successfully!";
+                                    include 'success.php';
+                                } else {
+                                    $error = " '$error1' and '$task_name' Can't Added!";
+                                    include 'alert.php';
+                                }
+                            }
                         }
-                    }
 
-                    // Close the database connection
-                    $conn->close();
+                        // Close the database connection
+
                     ?>
                     <div class="icon-box bg-color-4">
                         <a class="create d-flex" href="#" data-toggle="modal" data-target="#add_project">
@@ -113,8 +131,17 @@ include 'header.php';
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
+                                        <label>Project Name</label>
+                                        <input placeholder="Type to search for project" type="text"
+                                               class="form-control typeahead" id="project_name" name="project_name"
+                                               autocomplete="off">
+
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="form-group">
                                         <label>Priority</label>
-                                        <select class="form-control" name="priority" required>
+                                        <select class="form-control form-select" name="priority" required>
                                             <option selected="selected">High</option>
                                             <option>Medium</option>
                                             <option>Low</option>
@@ -143,7 +170,8 @@ include 'header.php';
 
                             <div class="form-group">
                                 <label>Description</label>
-                                <textarea rows="4" class="form-control" name="description" placeholder="Enter your message here" required></textarea>
+                                <textarea rows="4" class="form-control" name="description"
+                                          placeholder="Enter your message here" required></textarea>
                             </div>
                             <div class="submit-section">
                                 <button type="submit" class="btn btn-primary submit-btn">Save</button>
@@ -168,7 +196,8 @@ include 'header.php';
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div class="form-group"><label class="form-label">Employee Name</label>
-                                        <input placeholder="Type to search" type="text" class="form-control typeahead" id="username" name="username" autocomplete="off">
+                                        <input placeholder="Type to search" type="text" class="form-control typeahead"
+                                               id="username" name="username" autocomplete="off">
 
                                     </div>
                                 </div>
@@ -232,38 +261,46 @@ include 'header.php';
 <!-- END MAIN CONTENT -->
 <<!-- END MAIN CONTENT -->
 <?php include 'footer.php';
-include 'database.php';
+    include 'database.php';
 
-// Fetch usernames
-$sql22 = "SELECT username FROM employees";
-$result22 = $conn->query($sql22);
-$usernames = array();
-if ($result22->num_rows > 0) {
-    while ($row = $result22->fetch_assoc()) {
-        $usernames[] = $row['username'];
+    // Fetch usernames
+    $sql22 = "SELECT username FROM employees";
+    $result22 = $conn->query($sql22);
+    $usernames = array();
+    if ($result22->num_rows > 0) {
+        while ($row = $result22->fetch_assoc()) {
+            $usernames[] = $row['username'];
+        }
     }
-}
 
-// Fetch Task
-$sql23 = "SELECT task_name FROM tasks";
-$result23 = $conn->query($sql23);
-$task_name = array();
-if ($result23->num_rows > 0) {
-    while ($row = $result23->fetch_assoc()) {
-        $task_name[] = $row['task_name'];
+    // Fetch Task
+    $sql23 = "SELECT task_name FROM tasks";
+    $result23 = $conn->query($sql23);
+    $task_name = array();
+    if ($result23->num_rows > 0) {
+        while ($row = $result23->fetch_assoc()) {
+            $task_name[] = $row['task_name'];
+        }
     }
-}
 
-// Close the database connection after fetching data
+    // Fetch Project
+    $sql27 = "SELECT project_title FROM projects";
+    $result27 = $conn->query($sql27);
+    $project_name = array();
+    if ($result27->num_rows > 0) {
+        while ($row = $result27->fetch_assoc()) {
+            $project_name[] = $row['project_title'];
+        }
+    }
+
 
 ?>
-
 
 
 <!-- Bootstrap Typeahead JS -->
 <script src="js/typeahead.js"></script>
 <script>
-    $(document).ready(function(){
+    $(document).ready(function () {
         var usernames = <?php echo json_encode($usernames); ?>;
         $('.typeahead[name="username"]').typeahead({
             source: usernames
@@ -271,6 +308,10 @@ if ($result23->num_rows > 0) {
         var taskname = <?php echo json_encode($task_name); ?>;
         $('.typeahead[name="taskname"]').typeahead({
             source: taskname
+        });
+        var project_name = <?php echo json_encode($project_name); ?>;
+        $('.typeahead[name="project_name"]').typeahead({
+            source: project_name
         });
     });
 </script>

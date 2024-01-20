@@ -1,4 +1,5 @@
 <?php
+    include 'auth.php';
 include 'head.php';
 include_once 'dbconnect.php';
 include_once 'database.php';
@@ -108,11 +109,7 @@ if (isset($_POST['signup'])) {
                                         </form>
 
 
-                                        <div class="mt-59 text-center">
-                                            <p class="text-muted mb-0 fs-14">Already have an account ? <a
-                                                        href="userlogin.php" class="text-primary fw-semibold"> Sign
-                                                    in </a></p>
-                                        </div>
+
 
                                         <div class="mt-37 text-center">
 
@@ -165,4 +162,24 @@ if (isset($_POST['signup'])) {
             }
         });
     </script>
-<?php include 'footer.php'; ?>
+
+<script src="./libs/jquery/jquery.min.js"></script>
+<script src="./libs/jquery/jquery-ui.min.js"></script>
+<script src="./libs/moment/min/moment.min.js"></script>
+<script src="./libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="./libs/peity/jquery.peity.min.js"></script>
+<script src="./libs/chart.js/Chart.bundle.min.js"></script>
+<script src="./libs/owl.carousel/owl.carousel.min.js"></script>
+<script src="./libs/bootstrap/js/bootstrap.min.js"></script>
+<script src="./js/countto.js"></script>
+<script src="./libs/date-picker/datepicker.js"></script>
+<script src="./libs/simplebar/simplebar.min.js"></script>
+
+
+<!-- APP JS -->
+<script src="./js/main.js"></script>
+<script src="./js/shortcode.js"></script>
+<script src="./js/pages/datepicker.js"></script>
+
+<script>
+</script>

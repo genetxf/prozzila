@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['user'] = $user;
         $_SESSION['email'] = $row["email"];
             $email = $_SESSION['email'];
-            $sql2 = "SELECT * FROM `profiles` WHERE email = '$email'";
+            $sql2 = "SELECT * FROM profiles WHERE email = '$email'";
             $result2 = $conn->query($sql2);
             if ($result2->num_rows > 0) {
                 while ($row2 = $result2->fetch_assoc()) {

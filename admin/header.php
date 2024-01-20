@@ -77,11 +77,6 @@ $logid = $_SESSION['id'];
                             Client List
                         </a>
                     </li>
-                    <li>
-                        <a href="client-details.php">
-                            Client Details
-                        </a>
-                    </li>
                 </ul>
             </li>
             <li>
@@ -124,7 +119,7 @@ $logid = $_SESSION['id'];
         <div class="dropdown d-inline-block mt-12">
             <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
                     data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <img class="rounded-circle header-profile-user" src="./images/profile/<?php echo $logpicture;?>"
+                <img class="rounded-circle header-profile-user" src="../images/profile/<?php echo $logpicture;?>"
                      alt="Header Avatar">
                 <span class="pulse-css"></span>
                 <span class="info d-xl-inline-block  color-span">
@@ -136,7 +131,7 @@ $logid = $_SESSION['id'];
             </button>
             <div class="dropdown-menu dropdown-menu-end">
                 <!-- item-->
-                <a class="dropdown-item" href="#"><i class="bx bx-user font-size-16 align-middle me-1"></i> <span>Profile</span></a>
+                <a class="dropdown-item" href="userprofile.php"><i class="bx bx-user font-size-16 align-middle me-1"></i> <span>Profile</span></a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item text-danger" href="logout.php"><i
                             class="bx bx-power-off font-size-16 align-middle me-1 text-danger"></i> <span>Logout</span></a>

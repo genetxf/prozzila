@@ -56,6 +56,7 @@ include 'header.php';
                                     </div>
                                         <?php
                                         // Fetch data from the "cards" table
+
                                         $sql = "SELECT * FROM cards where status = 'todo'";
                                         $result = $conn->query($sql);
 
@@ -223,7 +224,8 @@ include 'header.php';
                                                                     </button>
                                                                 </div>
                                                                 <div class="modal-body">
-                                                                    <form>
+                                                                   <!-- <form method="POST" action="cardupst.php">-->
+                                                                    <form method="POST">
                                                                         <div class="box rounded-3">
                                                                             <div class="card-body p-4">
 
@@ -295,15 +297,24 @@ include 'header.php';
                                                                                     <br>
                                                                                 <?php endwhile; ?>
 
+                                                                               <!-- <div class="divider d-flex align-items-center my-4"></div>
+
+                                                                                <select required="" name="status" class="form-control form-select custom-select select2 select2-hidden-accessible" data-placeholder="Select Priority" tabindex="-1" aria-hidden="true" data-select2-id="select2-data-30-l6ni">
+                                                                                    <option label="Select Status" data-select2-id="select2-data-32-qodq"></option>
+                                                                                    <option>todo</option>
+                                                                                    <option>progress</option>
+                                                                                    <option>review</option>
+                                                                                    <option>approved</option>
+                                                                                </select>-->
 
                                                                                 <div class="divider d-flex align-items-center my-4"></div>
 
                                                                                 <!-- Save Button Section -->
                                                                                 <div class="col">
                                                                                     <div class="submit-section justify-content-center">
-                                                                                        <button class="btn btn-primary submit-btn">
-                                                                                            Save
-                                                                                        </button>
+                                                                                        <a href=" cardupdatest.php?data=<?php echo urlencode($cardid); ?>" class="btn btn-success submit-btn">
+                                                                                            Update
+                                                                                        </a>
                                                                                     </div>
                                                                                 </div>
 
@@ -637,9 +648,9 @@ include 'header.php';
                                                                                                 <!-- Save Button Section -->
                                                                                                 <div class="col">
                                                                                                     <div class="submit-section justify-content-center">
-                                                                                                        <button class="btn btn-primary submit-btn">
-                                                                                                            Save
-                                                                                                        </button>
+                                                                                                        <a href=" cardupdatest.php?data2=<?php echo urlencode($cardid); ?>" class="btn btn-success submit-btn">
+                                                                                                            Update
+                                                                                                        </a>
                                                                                                     </div>
                                                                                                 </div>
 
@@ -677,7 +688,7 @@ include 'header.php';
                                                             echo ' </div> ';
 
                                                     } else {
-                                                        echo "0 results";
+                                                        echo "    Add Cards!!!";
                                                         }
 
                                                 // Close the MySQL connection
@@ -971,9 +982,9 @@ include 'header.php';
                                                                                 <!-- Save Button Section -->
                                                                                 <div class="col">
                                                                                     <div class="submit-section justify-content-center">
-                                                                                        <button class="btn btn-primary submit-btn">
-                                                                                            Save
-                                                                                        </button>
+                                                                                        <a href=" cardupdatest.php?data3=<?php echo urlencode($cardid); ?>" class="btn btn-success submit-btn">
+                                                                                            Update
+                                                                                        </a>
                                                                                     </div>
                                                                                 </div>
 
@@ -1012,7 +1023,7 @@ include 'header.php';
                                                 echo '</div>';
 
                                         } else {
-                                            echo "0 results";
+                                            echo "Please add Cards!!!";
                                             }
 
                                     // Close the MySQL connection
@@ -1304,9 +1315,9 @@ include 'header.php';
                                                                                             <!-- Save Button Section -->
                                                                                             <div class="col">
                                                                                                 <div class="submit-section justify-content-center">
-                                                                                                    <button class="btn btn-primary submit-btn">
-                                                                                                        Save
-                                                                                                    </button>
+                                                                                                    <a href=" cardupdatest.php?data4=<?php echo urlencode($cardid); ?>" class="btn btn-success submit-btn">
+                                                                                                        Update
+                                                                                                    </a>
                                                                                                 </div>
                                                                                             </div>
 
@@ -1371,7 +1382,8 @@ include 'header.php';
                                                         echo ' </div> ';
 
                                                 } else {
-                                                    echo "0 results";
+
+                                                    echo "O results";
                                                                 }
 
                                             // Close the MySQL connection
@@ -1395,7 +1407,8 @@ include 'header.php';
                                                             xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
                                                             xhr.onreadystatechange = function () {
                                                                 if (xhr.readyState === 4 && xhr.status === 200) {
-                                                                    // Handle the response if needed
+                                                                    var successMessage = xhr.responseText;
+                                                                    showBootstrapWarning(successMessage);
                                                                     console.log(xhr.responseText);
                                                                 }
                                                             };
@@ -1403,6 +1416,27 @@ include 'header.php';
                                                         }
                                                     });
                                                 });
+
+                                                function showBootstrapWarning(successMessage) {
+                                                    // Create a new div element for the Bootstrap warning
+                                                    var alertContainer = document.createElement('div');
+                                                    alertContainer.className = 'alert alert-warning alert-dismissible fade show';
+                                                    alertContainer.setAttribute('role', 'alert');
+
+                                                    // Add close button
+                                                    alertContainer.innerHTML = '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
+
+                                                    // Add success message
+                                                    alertContainer.innerHTML += successMessage;
+
+                                                    // Append the alert to the document body
+                                                    document.body.appendChild(alertContainer);
+
+                                                    // Optional: Remove the alert after a delay
+                                                    setTimeout(function () {
+                                                        document.body.removeChild(alertContainer);
+                                                    }, 5000); // Adjust the delay (in milliseconds) as needed
+                                                }
                                             });
                                         </script>
                                         <div class="btn-add-card">
@@ -1470,12 +1504,18 @@ include 'header.php';
                             </div>
                             <div class="form-group">
                                 <label>Status</label>
-                                <select class="select form-control">
+                                <select name="status" class="select form-control form-select">
                                     <option selected>todo</option>
                                     <option>progress</option>
                                     <option>review</option>
                                     <option>approved</option>
                                 </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Start Date</label>
+                                <div class="cal-icon">
+                                    <input class="form-control" type="date" name="start">
+                                </div>
                             </div>
                             <div class="form-group">
                                 <label>Due Date</label>

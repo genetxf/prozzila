@@ -60,21 +60,13 @@ include 'header.php';
                 <div class="col-3 col-md-6 col-sm-12 mb-25">
                     <div class="box client">
 
-                        <div class="dropdown">
-                            <a href="javascript:void(0);" class="btn-link" data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class='bx bx-dots-horizontal-rounded'></i>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right">
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_client"><i class="bx bx-trash"></i> Delete</a>
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#edit_client"><i class="bx bx-edit mr-5"></i>Edit</a>
-                            </div>
-                        </div>
+
                         <div class="box-body pt-5 pb-0">
                             <div class="img-box">
-                                <img src="./images/client/1.png" alt="">
-                                <div class="pulse-css"></div>
+                                <img  class="rounded-circle header-profile-user"  src="../images/client/<?php echo $row2["image"] ?>" alt="">
+                                <div style="left: 40px;bottom: 3px;" class="pulse-css"></div>
                             </div>
-                            <a href="client-details.php"><h5 class="mt-17"><?php echo $row2["name"]; ?></h5></a>
+                            <a href="client-details.php?data=<?php echo urlencode($row2["id"]); ?>"><h5 class="mt-17"><?php echo $row2["name"]; ?></h5></a>
                             
                             <p class="fs-14 font-w400 font-main"><span class="text-clo-primary font-w500 pl-4"><?php echo $row2["status"]; ?></span></p>
                             <ul class="info">
@@ -83,7 +75,7 @@ include 'header.php';
                             </ul>
                             <div class="group-btn d-flex justify-content-between">
                                 <a class="bg-btn-pri color-white" href="mailto:<?php echo $row2["email_id"]; ?>">Send Email</a>
-                                <a class="bg-btn-sec color-main" href="client-details.php">View Profile</a>
+                                <a class="bg-btn-sec color-main" href="client-details.php?data=<?php echo urlencode($row2["id"]); ?>">View Profile</a>
                             </div>
                         </div>
 
@@ -138,7 +130,7 @@ include 'header.php';
                                                         <tr class="odd">
                                                             <td class="text-center"><?php echo $row["id"]; ?></td>
                                                             <td class="text-center"><?php echo $row["client_id"]; ?></td>
-                                                            <td><?php echo $row["name"]; ?></td>
+                                                            <td><a href="client-details.php?data=<?php echo urlencode($row["id"]); ?>"><?php echo $row["name"]; ?></a></td>
                                                             <td><?php echo $row["email_id"]; ?></td>
                                                             <td><?php echo $row["contact_no"]; ?></td>
                                                             <td><?php echo $row["country"]; ?></td>

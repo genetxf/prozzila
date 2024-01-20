@@ -11,17 +11,15 @@ $result = $conn->query($sql);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-        Protend - Project Management Admin Dashboard HTML Template
-    </title>
-    <link rel="shortcut icon" href="./images/favicon.png" type="image/png">
     <!-- GOOGLE FONT -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <!-- BOXICONS -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="css/icons.min.css">
-
+    <title>
+        ProZZila - Project Management System
+    </title>
     <!-- Plugin -->
     <link rel="stylesheet" href="./libs/bootstrap-datepicker/css/bootstrap-datepicker.min.css">
     <link rel="stylesheet" href="./libs/date-picker/datepicker.css">
@@ -157,7 +155,7 @@ include 'header.php';
                                 <a href="#" class="btn btn-light"><i class='bx bxs-envelope' ></i> </a>
                                 <a href="#" class="btn btn-light"> <i class='bx bxs-phone-call'></i> </a>
                                 <a href="#" class="btn btn-light"><i class='bx bxs-error-circle' ></i></a>
-                                <a href="#" class="btn btn-light"> <i class='bx bxs-message-alt-edit'></i> </a>
+                                <a href="profileup.php?user_id=<?php echo urlencode($logid); ?>" class="btn btn-light"> <i class='bx bxs-message-alt-edit'></i> </a>
                             </div>
                         </div>
                     </div>
@@ -175,19 +173,19 @@ include 'header.php';
                                             <td class="py-2 px-0"> <span class="">#365900</span> </td>
                                         </tr>
                                         <tr>
-                                            <td class="py-2 px-0"> <span class="w-50">Designation</span> </td>
+                                            <td class="py-2 px-0"> <span class="w-50">First Name</span> </td>
                                             <td>:</td>
                                             <td class="py-2 px-0"> <span class="">Sr. Designer</span> </td>
                                         </tr>
                                         <tr>
-                                            <td class="py-2 px-0"> <span class="w-50">Department</span> </td>
+                                            <td class="py-2 px-0"> <span class="w-50">Last Name</span> </td>
                                             <td>:</td>
-                                            <td class="py-2 px-0"> <span class="">Development</span> </td>
+                                            <td class="py-2 px-0"> <span class="">Sr. Designer</span> </td>
                                         </tr>
                                         <tr>
-                                            <td class="py-2 px-0"> <span class="w-50">Join Date</span> </td>
+                                            <td class="py-2 px-0"> <span class="w-50">ABout</span> </td>
                                             <td>:</td>
-                                            <td class="py-2 px-0"> <span class="">25 - 12 - 2022</span> </td>
+                                            <td class="py-2 px-0"> <span class="">About text</span> </td>
                                         </tr>
                                         <tr>
                                             <td class="py-2 px-0"> <span class="w-50">Phone Number</span> </td>
@@ -195,9 +193,9 @@ include 'header.php';
                                             <td class="py-2 px-0"> <span class="">+11 05986 2359 03</span> </td>
                                         </tr>
                                         <tr>
-                                            <td class="py-2 px-0"> <span class="w-50">Status</span> </td>
+                                            <td class="py-2 px-0"> <span class="w-50">Address</span> </td>
                                             <td>:</td>
-                                            <td class="py-2 px-0"> <span class="badge badge-success">Active</span> </td>
+                                            <td class="py-2 px-0"> <p>Active</p> </td>
                                         </tr>
                                     </tbody>
                                 </table>

@@ -227,9 +227,6 @@ WHERE work_status = 'Completed';";
                                         aria-controls="task-profile" rowspan="1" colspan="1"
                                         style="width: 110.719px;">Work Status
                                     </th>
-                                    <th class="border-bottom-0 sorting_disabled fs-14 font-w500" rowspan="1"
-                                        colspan="1" style="width: 145.391px;">Actions
-                                    </th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -275,22 +272,6 @@ WHERE work_status = 'Completed';";
 
                                                 ?>
                                                 <span class="badge <?php echo $workbadge ?>"><?php echo $row4["work_status"] ?></span>
-                                            </td>
-                                            <td>
-                                                <div class="dropdown">
-                                                    <a href="javascript:void(0);" class="btn-link"
-                                                       data-bs-toggle="dropdown" aria-expanded="false">
-                                                        <i class='bx bx-dots-horizontal-rounded'></i>
-                                                    </a>
-                                                    <div class="dropdown-menu dropdown-menu-right">
-                                                        <a class="dropdown-item" href="#" data-toggle="modal"
-                                                           data-target="#delete_client"><i class="bx bx-trash"></i>
-                                                            Delete</a>
-                                                        <a class="dropdown-item" href="#" data-toggle="modal"
-                                                           data-target="#edit_client"><i
-                                                                    class="bx bx-edit mr-5"></i>Edit</a>
-                                                    </div>
-                                                </div>
                                             </td>
                                         </tr>
                                         <?php

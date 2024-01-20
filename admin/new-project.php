@@ -36,7 +36,7 @@ include 'database.php';
                                         <label class="form-label">Department:</label>
                                         <select
                                                 required name="department"
-                                                class="form-control custom-select select2 select2-hidden-accessible"
+                                                class="form-control form-select custom-select select2 select2-hidden-accessible"
                                                 data-placeholder="Select Department" tabindex="-1" aria-hidden="true"
                                                 data-select2-id="select2-data-22-9i9m"
                                         >
@@ -66,7 +66,7 @@ include 'database.php';
                                 <div class="col-md-6 col-sm-12 mb-24">
                                     <div class="form-group"><label class="form-label">Project Priority:</label> <select
                                                 required name="priority"
-                                                class="form-control custom-select select2 select2-hidden-accessible"
+                                                class="form-control form-select custom-select select2 select2-hidden-accessible"
                                                 data-placeholder="Select Priority" tabindex="-1" aria-hidden="true"
                                                 data-select2-id="select2-data-30-l6ni">
                                             <option label="Select Priority"
@@ -94,14 +94,9 @@ include 'database.php';
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-md-6 col-sm-12 mb-24">
+                                <div class="col-md-12 col-sm-12 mb-24">
                                     <div class="form-group"><label class="form-label">Client Name</label>
                                         <input placeholder="Type to search" type="text" class="form-control typeahead" id="username" name="username" autocomplete="off">
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-sm-12 mb-24">
-                                    <div class="form-group "><label class="form-label">Assign Team:</label>
-                                        <input placeholder="Type to search" type="text" class="form-control typeahead" id="teamnames" name="teamnames" autocomplete="off">
                                     </div>
                                 </div>
                             </div>

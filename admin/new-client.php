@@ -26,15 +26,6 @@ include 'header.php';
                                 </div>
 
                                 <div class="col-md-6 col-sm-12 mb-24">
-                                    <div class="form-group"><label class="form-label">Client ID</label> <input required
-                                                                                                                type="text"
-                                                                                                                name="client_id"
-                                                                                                                class="form-control"
-                                                                                                                placeholder="2569852">
-                                    </div>
-                                </div>
-
-                                <div class="col-12 mb-24">
                                     <div class="form-group"><label class="form-label">Email</label> <input required
                                                                                                            type="email"
                                                                                                            name="email"
@@ -65,7 +56,7 @@ include 'header.php';
                                 <div class="col-md-6 col-sm-12 mb-24">
                                     <div class="form-group"><label class="form-label">Status</label> <select
                                                 required name="status"
-                                                class="form-control custom-select select2 select2-hidden-accessible"
+                                                class="form-control form-select custom-select select2 select2-hidden-accessible"
                                                 data-placeholder="Select Status" tabindex="-1" aria-hidden="true"
                                                 data-select2-id="select2-data-22-9i9m">
                                             <option label="Select Status"
@@ -153,7 +144,7 @@ include 'header.php';
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             <label>Client</label>
-                                            <select class="select">
+                                            <select class="form-select select">
                                                 <option>Client 1</option>
                                                 <option>Client 2</option>
                                             </select>
@@ -188,7 +179,7 @@ include 'header.php';
                                     <div class="col-sm-3">
                                         <div class="form-group">
                                             <label>&nbsp;</label>
-                                            <select class="select">
+                                            <select class="form-select select">
                                                 <option>Hourly</option>
                                                 <option selected>Fixed</option>
                                             </select>
@@ -197,7 +188,7 @@ include 'header.php';
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             <label>Priority</label>
-                                            <select class="select">
+                                            <select class="form-select select">
                                                 <option selected>High</option>
                                                 <option>Medium</option>
                                                 <option>Low</option>

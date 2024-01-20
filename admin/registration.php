@@ -25,6 +25,13 @@ if (isset($_POST['signup'])) {
         } else {
             include 'alert.php';
         }
+        $insertQuery = "INSERT INTO `prozzila`.employees (`username`, `email`) VALUES('$uname','$email')";
+        if (mysql_query("INSERT INTO `prozzila`.employees (`username`, `email`) VALUES('$uname','$email')")) {
+            $success ="Registration for Username '$uname' updated successfully!";
+            include 'success.php';
+        } else {
+            include 'alert.php';
+        }
     }
 
 }

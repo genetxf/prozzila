@@ -9,12 +9,52 @@ if (isset($_POST['user_id'], $_POST['card_id'], $_POST['task_id'])) {
     $taskId = $_POST['task_id'];
 
     $newStatus = "Complete";
+    // Check if the status is 'Complete' in the completed_tasks table
+    $checkif = "SELECT * FROM `assignment` WHERE `employee_id` = $employeeId";
+    $checkifmatch = $conn->query($checkif);
 
+    if ($checkifmatch->num_rows > 0) {
+        $sql = "INSERT INTO `completed_tasks`(`user_id`, `card_id`, `task_id`, `completed_task`) VALUES ($employeeId, $cardId, $taskId, NOW())";
+        $success ="Assignment status updated successfully.". "<br>";
+        include 'success.php';
+    }
     // Insert completed task into the "completed_tasks" table
-    $sql = "INSERT INTO `completed_tasks`(`user_id`, `card_id`, `task_id`, `completed_task`) VALUES ($employeeId, $cardId, $taskId, NOW())";
+    else
+    {
+        $error ="You are not assigned to this task.". "<br>";
+        include 'alert.php';
+    }
 
     // Assuming $conn is your database connection
     if ($conn->query($sql) === TRUE) {
+
+        // Select count by task_id from assignment table
+        $countQuery = "SELECT task_id, COUNT(*) AS total_count FROM assignment GROUP BY task_id";
+
+        $result = $conn->query($countQuery);
+
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $task_id = $row['task_id'];
+                $total_count = $row['total_count'];
+
+                // Update the tasks table with the total count
+                $updateQuery = "UPDATE tasks SET total_assigned = $total_count WHERE id = $task_id";
+
+                if ($conn->query($updateQuery) === TRUE) {
+                    // Update successful
+                    $success = "Task $task_id updated with total_assigned = $total_count<br>";
+                } else {
+                    // Handle update error
+                    $error = "Error updating task $task_id: " . $conn->error . "<br>";
+                }
+            }
+        } else {
+            // No records found in the assignment table
+            echo "No records found in the assignment table.<br>";
+        }
+
+
         echo "Task completed and inserted into completed_tasks table successfully";
         $updateAssignmentSql = "UPDATE `assignment` SET `status` = '$newStatus' WHERE `employee_id` = $employeeId AND `task_id` = $taskId";
 

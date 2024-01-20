@@ -16,7 +16,6 @@ if ($conn->connect_error) {
 // Process form submission
 if  (isset($_POST['submit']))  {
 // Retrieve and sanitize form data
-    $client_id = mysqli_real_escape_string($conn, $_POST["client_id"]);
     $name = mysqli_real_escape_string($conn, $_POST["name"]);
     $email = mysqli_real_escape_string($conn, $_POST["email"]);
 
@@ -32,8 +31,8 @@ if  (isset($_POST['submit']))  {
 
 
 // Retrieve and sanitize other form fields as needed...
-    $sql = "INSERT INTO `client`(`client_id`, `name`, `email_id`, `contact_no`, `country`, `address`, `status`, `website`, `about`, `image`)
-            VALUES ('$client_id','$name', '$email', '$contact_no', '$country', '$address', '$status', '$website', '$about', '$attachment')";
+    $sql = "INSERT INTO `client`( `name`, `email_id`, `contact_no`, `country`, `address`, `status`, `website`, `about`, `image`)
+            VALUES ('$name', '$email', '$contact_no', '$country', '$address', '$status', '$website', '$about', '$attachment')";
 
 //Upload Images
     $targetDirectory = "images/profile/"; // Change this to your desired upload directory

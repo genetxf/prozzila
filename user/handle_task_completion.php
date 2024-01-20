@@ -17,7 +17,12 @@ if (isset($_POST['user_id'], $_POST['card_id'], $_POST['task_id'])) {
     if ($conn->query($sql) === TRUE) {
         echo "Task completed and inserted into completed_tasks table successfully";
         $updateAssignmentSql = "UPDATE `assignment` SET `status` = '$newStatus' WHERE `employee_id` = $employeeId AND `task_id` = $taskId";
-
+        $updateAssignmentSql2 = "UPDATE `card` SET `status` = 'review' WHERE id = '$cardId'";
+        if ($conn->query($updateAssignmentSql2) === TRUE) {
+            echo "Card status updated successfully.";
+            $success ="Card status updated successfully.". "<br>";
+            include 'success.php';
+        }
         if ($conn->query($updateAssignmentSql) === TRUE) {
             echo "Assignment status updated successfully.";
             $success ="Assignment status updated successfully.". "<br>";
