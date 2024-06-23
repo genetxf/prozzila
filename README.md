@@ -25,13 +25,13 @@
 ## Screenshots
 
 ### Dashboard
-![Dashboard](https://github.com/genetxf/prozzila/assets/156448573/4cedbeab-20e1-46ca-9d6b-1b253f1f3692)
+![Dashboard](https://github.com/genetxf/prozzila/blob/main/screenshot/dashborad.jpg)
 
 ### Task Management
-![Task Management](https://github.com/genetxf/prozzila/assets/156448573/f84fd35b-d155-40be-8ad4-d6e070af3f87)
+![Task Management](https://github.com/genetxf/prozzila/blob/main/screenshot/task.jpg)
 
 ### Kanban Board
-![Kanban Board](https://github.com/genetxf/prozzila/assets/156448573/89da856d-3854-40d2-b6ef-bd4e11e12273)
+![Kanban Board](https://github.com/genetxf/prozzila/blob/main/screenshot/kanbanboard.jpg)
 
 ## Installation
 
