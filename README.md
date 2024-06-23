@@ -2,9 +2,6 @@
 
 ![Prozzila Logo](https://github.com/genetxf/prozzila/blob/main/images/prozilla_logo_motto%20n.svg)
 
-![Build Status](https://img.shields.io/badge/build-passing-brightgreen)
-![License](https://img.shields.io/badge/license-MIT-blue)
-
 ## Overview
 
 **Prozzila** is a comprehensive Project and Task Management System designed to enhance collaboration and streamline project workflows. It offers features like user-specific task assignment, project timelines, real-time collaboration tools, and customizable task management.
