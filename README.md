@@ -82,25 +82,6 @@
 - **Back-end:** PHP, MySQL
 - **Browser:** Google Chrome
 
-## API Documentation
-
-(If applicable, provide basic API endpoints and their usage)
-
-## Contributing
-
-Contributions are welcome! Please follow these steps:
-
-1. Fork the repository
-2. Create a new branch (`git checkout -b feature-branch`)
-3. Make your changes
-4. Commit your changes (`git commit -m 'Add new feature'`)
-5. Push to the branch (`git push origin feature-branch`)
-6. Open a pull request
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ## Future Work
 
 - **Mobile Application Integration:** Develop a mobile app for Prozzila to allow users to manage projects on the go.
@@ -113,13 +94,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - **Syed Foyez Uddin** - [GitHub](https://github.com/genetxf)
 - **Mirza Alamin Hossen** - [GitHub](https://github.com/alaminmirza)
-
-## Acknowledgement
-
-We would like to express our gratitude to:
-- **Tanzim Tamanna Shitu:** For her valuable guidance and support as our project supervisor.
-- **Department of Computer Science and Engineering, Eastern University:** For providing an excellent educational environment and resources.
-- **Our Families and Teachers:** For their constant support and encouragement.
 
 ## References
 
