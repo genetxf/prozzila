@@ -28,13 +28,13 @@
 ## Screenshots
 
 ### Dashboard
-![Dashboard](<img width="1792" alt="Screenshot 2024-06-23 at 5 46 35 AM" src="https://github.com/genetxf/prozzila/assets/156448573/4cedbeab-20e1-46ca-9d6b-1b253f1f3692">)
+![Dashboard](https://github.com/genetxf/prozzila/assets/156448573/4cedbeab-20e1-46ca-9d6b-1b253f1f3692)
 
 ### Task Management
-![Task Management](path_to_task_management_screenshot)
+![Task Management](https://github.com/genetxf/prozzila/assets/156448573/f84fd35b-d155-40be-8ad4-d6e070af3f87)
 
 ### Kanban Board
-![Kanban Board](path_to_kanban_board_screenshot)
+![Kanban Board](https://github.com/genetxf/prozzila/assets/156448573/89da856d-3854-40d2-b6ef-bd4e11e12273)
 
 ## Installation
 
@@ -53,7 +53,7 @@
     - Import the provided `prozzila.sql` file into the database
 
 4. **Configure database connection:**
-    - Update the database configuration in `config.php` with your database credentials
+    - Update the database configuration in `database.php` with your database credentials
 
 5. **Start local server:**
     - Start Apache and MySQL services from the XAMPP/MAMP control panel
@@ -61,11 +61,11 @@
 ## Usage
 
 - **Admin Login:**
-    - Navigate to `http://localhost/prozzila/admin-login.php`
+    - Navigate to `http://localhost/prozzila/admin/`
     - Use admin credentials to log in
 
 - **User Login:**
-    - Navigate to `http://localhost/prozzila/user-login.php`
+    - Navigate to `http://localhost/prozzila/user/)`
     - Use user credentials to log in
 
 - **Manage Projects and Tasks:**
